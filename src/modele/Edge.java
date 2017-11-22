@@ -1,21 +1,37 @@
 package modele;
 import org.jgrapht.graph.DefaultEdge;
 
+@SuppressWarnings("serial")
 public class Edge extends DefaultEdge implements Comparable<Edge> {
-
-	private static final long serialVersionUID = 1L;
-
-	public Edge() {
+	/**
+	 * Permet de déterminer le type de porte (à retravailler suivant l'implémentation)
+	 */
+	private int doorType;
+	
+	public Edge(int doorType) {
 		super();
+		this.setDoorType(doorType);
 	}
 	
 	@Override
 	public int compareTo(Edge o) {
-		return 0;
+		int diffSource = ((Vertex)this.getSource()).compareTo((Vertex)o.getSource());
+		if (diffSource !=0)
+			return diffSource;
+		else
+			return  ((Vertex)this.getTarget()).compareTo((Vertex)o.getTarget());
 	}
 	
-	public String toDot() {
-		return ((Vertex) this.getSource()).toDot() + "--" + ((Vertex) this.getTarget()).toDot();
+	public String toString() {
+		String s = "[" + this.getSource().toString() + "<->" + this.getTarget().toString() + "]";
+		return s;
 	}
-	
+
+	public int getDoorType() {
+		return doorType;
+	}
+
+	public void setDoorType(int doorType) {
+		this.doorType = doorType;
+	}	
 }
