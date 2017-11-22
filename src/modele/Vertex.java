@@ -1,3 +1,4 @@
+package modele;
 
 public class Vertex implements Comparable<Vertex> {
 	private int x, y;

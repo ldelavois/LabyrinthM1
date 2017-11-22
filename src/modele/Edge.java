@@ -1,3 +1,4 @@
+package modele;
 import org.jgrapht.graph.DefaultEdge;
 
 public class Edge extends DefaultEdge implements Comparable<Edge> {

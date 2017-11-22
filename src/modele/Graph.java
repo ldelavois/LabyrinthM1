@@ -1,3 +1,4 @@
+package modele;
 import org.jgrapht.graph.SimpleGraph;
 
 @SuppressWarnings("serial")
