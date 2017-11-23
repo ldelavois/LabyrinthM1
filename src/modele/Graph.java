@@ -15,15 +15,12 @@ public class Graph extends SimpleGraph<Vertex, Edge>{
 		/* Identifiant de vertex */
 		int num = 0;
 		for(int x = 0; x < dimentionX; x++)
-			for(int y = 0; y < dimentionY; y++)
+			for(int y = 0; y < dimentionY; y++) {
 				vertices[x][y] = new Vertex(x, y, num++);
+				addVertex(vertices[x][y]);
+			}
 	}
-	
-	public boolean addVertex(Vertex v) {
-		boolean ret = super.addVertex(v);
-		return ret;
-	}
-	
+		
 	public boolean contains(Vertex vertex) {
 		List<Vertex> vertices = new ArrayList<Vertex>(this.vertexSet());
 		return vertices.contains(vertex);
