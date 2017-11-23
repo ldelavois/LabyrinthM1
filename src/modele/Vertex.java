@@ -1,12 +1,13 @@
 package modele;
 
 public class Vertex implements Comparable<Vertex> {
-	private int x, y;
+	private int x, y, nbr;
 	
-	public Vertex(int x, int y) {
+	public Vertex(int x, int y, int nbr) {
 		super();
 		this.x = x;
 		this.y = y;
+		this.nbr = nbr;
 	}
 	
 	public int getX() {
@@ -50,6 +51,14 @@ public class Vertex implements Comparable<Vertex> {
 
 	@Override
 	public String toString() {
-		return "(" + x + ", " + y + ")";
+		return "(" + nbr + ")";
+	}
+
+	public boolean inBorders(Directions dir) {
+		return (x >= 0 && x < Labyrinth.WIDTH && y >= 0 && y < Labyrinth.HEIGHT);
+	}
+	
+	public int getNbr() {
+		return nbr;
 	}	
 }
