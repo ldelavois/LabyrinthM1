@@ -53,9 +53,30 @@ public class Vertex implements Comparable<Vertex> {
 	public String toString() {
 		return "(" + nbr + ")";
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		return x == ((Vertex) o).getX() && y == ((Vertex) o).getY();
+	}
 
 	public boolean inBorders(Directions dir) {
-		return (x >= 0 && x < Labyrinth.WIDTH && y >= 0 && y < Labyrinth.HEIGHT);
+		boolean verif = false;
+		switch(dir)
+		{
+		case NORTH:
+			verif = x >= 0 && x < Labyrinth.WIDTH && y - 1 >= 0 && y - 1 < Labyrinth.HEIGHT;
+			break;
+		case SOUTH:   
+			verif = x >= 0 && x < Labyrinth.WIDTH && y + 1 >= 0 && y + 1 < Labyrinth.HEIGHT;
+			break;
+		case EAST:
+			verif = x + 1 >= 0 && x + 1 < Labyrinth.WIDTH && y >= 0 && y < Labyrinth.HEIGHT;
+			break;
+		case WEST:
+			verif = x - 1 >= 0 && x - 1 < Labyrinth.WIDTH && y >= 0 && y < Labyrinth.HEIGHT;
+			break;
+		}
+		return verif;
 	}
 	
 	public int getNbr() {

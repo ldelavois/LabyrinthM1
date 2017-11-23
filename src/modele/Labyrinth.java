@@ -1,5 +1,6 @@
 package modele;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
 
@@ -9,11 +10,10 @@ public class Labyrinth {
 	private Random rand;
 	private Graph graph;
 	
-	public Labyrinth (Vertex v) {
-		graph = new Graph();
+	public Labyrinth () {
+		graph = new Graph(WIDTH, HEIGHT);
 		rand = new Random();
-		graph.addVertex(v);
-		buildRandomPath(v);
+		buildRandomPath(graph.getVertex(0, 0));
 	}
 	
 	private void buildRandomPath (Vertex vertex) {
@@ -30,7 +30,6 @@ public class Labyrinth {
 		
 		for(int i = 0; i < 4; i++) {
 			Directions dir = directions[i];
-			System.out.println(graph.contains(vertex));
 			if(vertex.inBorders(dir) && graph.doesntExist(vertex, dir)) {
 				int	x = vertex.getX();
 				int	y = vertex.getY();
@@ -54,8 +53,7 @@ public class Labyrinth {
 					yt = y;
 					break;
 				}
-				Vertex next = new Vertex(xt, yt, vertex.getNbr() + 1);
-				graph.addVertex(next);
+				Vertex next = graph.getVertex(xt, yt);
 				graph.addEdge(vertex, next);
 				buildRandomPath(next);
 			}

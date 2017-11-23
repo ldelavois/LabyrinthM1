@@ -6,9 +6,17 @@ import org.jgrapht.graph.SimpleGraph;
 
 @SuppressWarnings("serial")
 public class Graph extends SimpleGraph<Vertex, Edge>{
+	private Vertex vertices[][];
 	
-	public Graph() {
+	public Graph(int dimentionX, int dimentionY) {
 		super(Edge.class);
+		
+		vertices = new Vertex[dimentionX][dimentionY];
+		/* Identifiant de vertex */
+		int num = 0;
+		for(int x = 0; x < dimentionX; x++)
+			for(int y = 0; y < dimentionY; y++)
+				vertices[x][y] = new Vertex(x, y, num++);
 	}
 	
 	public boolean addVertex(Vertex v) {
@@ -22,23 +30,21 @@ public class Graph extends SimpleGraph<Vertex, Edge>{
 	}
 
 	public boolean doesntExist(Vertex vertex, Directions dir) {
-		Vertex tmp = null;
 		switch(dir) {
 		case NORTH:
-			tmp = new Vertex(vertex.getX(), vertex.getY()-1, -1);
-			break;
+			return vertex.equals(vertices[vertex.getX()][vertex.getY() - 1]);
 		case SOUTH:
-			tmp = new Vertex(vertex.getX(), vertex.getY()+1, -1);
-			break;
+			return vertex.equals(vertices[vertex.getX()][vertex.getY() + 1]);		
 		case EAST:
-			tmp = new Vertex(vertex.getX()+1, vertex.getY(), -1);
-			break;
-		case WEST:
-			tmp = new Vertex(vertex.getX()-1, vertex.getY(), -1);
-			break;
+			return vertex.equals(vertices[vertex.getX() + 1][vertex.getY()]);
+		case WEST:			
+			return vertex.equals(vertices[vertex.getX() - 1][vertex.getY()]);
 		}
-		if(contains(tmp))
-			return false;
-		return true;
+		/* N'arrivera jamais */
+		return false;
+	}
+
+	public Vertex getVertex(int x, int y) {
+		return vertices[x][y];
 	}
 }
