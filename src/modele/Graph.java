@@ -18,10 +18,27 @@ public class Graph extends SimpleGraph<Vertex, Edge>{
 	
 	public boolean contains(Vertex vertex) {
 		List<Vertex> vertices = new ArrayList<Vertex>(this.vertexSet());
-		for(Vertex v : vertices) {
-			if(v.equals(vertex))
-				return true;
+		return vertices.contains(vertex);
+	}
+
+	public boolean doesntExist(Vertex vertex, Directions dir) {
+		Vertex tmp = null;
+		switch(dir) {
+		case NORTH:
+			tmp = new Vertex(vertex.getX(), vertex.getY()-1, -1);
+			break;
+		case SOUTH:
+			tmp = new Vertex(vertex.getX(), vertex.getY()+1, -1);
+			break;
+		case EAST:
+			tmp = new Vertex(vertex.getX()+1, vertex.getY(), -1);
+			break;
+		case WEST:
+			tmp = new Vertex(vertex.getX()-1, vertex.getY(), -1);
+			break;
 		}
-		return false;
+		if(contains(tmp))
+			return false;
+		return true;
 	}
 }

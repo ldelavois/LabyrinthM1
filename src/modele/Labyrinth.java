@@ -30,7 +30,8 @@ public class Labyrinth {
 		
 		for(int i = 0; i < 4; i++) {
 			Directions dir = directions[i];
-			if(vertex.inBorders(dir) && !graph.contains(vertex)) {
+			System.out.println(graph.contains(vertex));
+			if(vertex.inBorders(dir) && graph.doesntExist(vertex, dir)) {
 				int	x = vertex.getX();
 				int	y = vertex.getY();
 				int	xt = 0, yt = 0;
