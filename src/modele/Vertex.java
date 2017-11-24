@@ -64,16 +64,16 @@ public class Vertex implements Comparable<Vertex> {
 		switch(dir)
 		{
 		case NORTH:
-			verif = x >= 0 && x < Labyrinth.WIDTH && y - 1 >= 0 && y - 1 < Labyrinth.HEIGHT;
+			verif = x >= 0 && x < Graph.WIDTH && y - 1 >= 0 && y - 1 < Graph.HEIGHT;
 			break;
 		case SOUTH:   
-			verif = x >= 0 && x < Labyrinth.WIDTH && y + 1 >= 0 && y + 1 < Labyrinth.HEIGHT;
+			verif = x >= 0 && x < Graph.WIDTH && y + 1 >= 0 && y + 1 < Graph.HEIGHT;
 			break;
 		case EAST:
-			verif = x + 1 >= 0 && x + 1 < Labyrinth.WIDTH && y >= 0 && y < Labyrinth.HEIGHT;
+			verif = x + 1 >= 0 && x + 1 < Graph.WIDTH && y >= 0 && y < Graph.HEIGHT;
 			break;
 		case WEST:
-			verif = x - 1 >= 0 && x - 1 < Labyrinth.WIDTH && y >= 0 && y < Labyrinth.HEIGHT;
+			verif = x - 1 >= 0 && x - 1 < Graph.WIDTH && y >= 0 && y < Graph.HEIGHT;
 			break;
 		}
 		return verif;

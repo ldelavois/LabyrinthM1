@@ -1,19 +1,19 @@
 package modele;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
 
 public class Labyrinth {
 
-	public static final int WIDTH = 16, HEIGHT = 16;
 	private Random rand;
 	private Graph graph;
 	
 	public Labyrinth () {
-		graph = new Graph(WIDTH, HEIGHT);
+		graph = new Graph();
 		rand = new Random();
-		buildRandomPath(graph.getVertex(0, 0));
+		Vertex v = new Vertex(0, 0, 0);
+		graph.addVertex(v);
+		buildRandomPath(v);
 	}
 	
 	private void buildRandomPath (Vertex vertex) {
@@ -53,7 +53,8 @@ public class Labyrinth {
 					yt = y;
 					break;
 				}
-				Vertex next = graph.getVertex(xt, yt);
+				Vertex next = new Vertex(xt, yt, vertex.getNbr());
+				graph.addVertex(next);
 				graph.addEdge(vertex, next);
 				buildRandomPath(next);
 			}
@@ -67,6 +68,4 @@ public class Labyrinth {
 	public void setGraph(Graph graph) {
 		this.graph = graph;
 	}
-	
-	
 }
