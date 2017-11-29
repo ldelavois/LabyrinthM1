@@ -3,6 +3,12 @@ package modele;
 public class Vertex implements Comparable<Vertex> {
 	private int x, y, nbr;
 	
+	/**
+	 * Constructeur de la classe.
+	 * @param x : Position horizontale
+	 * @param y : Position verticale
+	 * @param nbr : Identifiant du Vertex
+	 */
 	public Vertex(int x, int y, int nbr) {
 		super();
 		this.x = x;
@@ -10,22 +16,27 @@ public class Vertex implements Comparable<Vertex> {
 		this.nbr = nbr;
 	}
 	
+	/**
+	 * 
+	 * @return Position verticale du Vertex
+	 */
 	public int getX() {
 		return x;
 	}
 
-	public void setX(int x) {
-		this.x = x;
-	}
-
+	/**
+	 * 
+	 * @return Position horizontale du Graph
+	 */
 	public int getY() {
 		return y;
 	}
-
-	public void setY(int y) {
-		this.y = y;
-	}
-
+	
+	/**
+	 * Méthode qui permet de savoir si deux Vertex sont voisins
+	 * @param o : Vertex pour lequel on veut savoir si il est notre voisin
+	 * @return true si les Vertex sont voisins, false sinon
+	 */
 	public boolean areNeighbors (Vertex o) {
 		int dx = Math.abs(x - o.x);
 		int dy = Math.abs(y - o.y);
@@ -59,6 +70,12 @@ public class Vertex implements Comparable<Vertex> {
 		return x == ((Vertex) o).getX() && y == ((Vertex) o).getY();
 	}
 
+	/**
+	 * Fonction qui permet de savoir si on se trouve dans le Graph en allant dans la direction {@code dir}
+	 * à partir du Vertex courant.
+	 * @param dir : La direction
+	 * @return vrai si on se trouve dans les limites du Graph, faux sinon.
+	 */
 	public boolean inBorders(Directions dir) {
 		boolean verif = false;
 		switch(dir)
@@ -79,6 +96,10 @@ public class Vertex implements Comparable<Vertex> {
 		return verif;
 	}
 	
+	/**
+	 * 
+	 * @return L'identifiant du Vertex
+	 */
 	public int getNbr() {
 		return nbr;
 	}	
