@@ -38,4 +38,41 @@ public class Graph extends SimpleGraph<Vertex, Edge>{
 			return false;
 		return true;
 	}
+
+	public Vertex getVertexByDir(Vertex v, Directions dir) {
+		Vertex res = null;
+		for(Edge e: this.edgeSet()) {
+			Vertex source = e.source();
+			Vertex target = e.target();
+			Vertex v2 = null;
+			if(v.equals(source)) {
+				v2 = target;
+			
+				switch(dir)
+				{
+				case NORTH:
+					if (v.getX() == v2.getX() && v.getY() == v2.getY() - 1) {
+						res=v2;
+					}
+					break;
+				case SOUTH:   
+					if (v.getX() == v2.getX() && v.getY() == v2.getY() + 1) {
+						res=v2;
+					}
+					break;
+				case EAST:
+					if (v.getX() == v2.getX() + 1 && v.getY() == v2.getY()) {
+						res=v2;
+					}
+					break;
+				case WEST:
+					if (v.getX() == v2.getX() - 1 && v.getY() == v2.getY()) {
+						res=v2;
+					}
+					break;
+				}
+			}
+		}
+		return res;
+	}
 }
