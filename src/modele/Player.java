@@ -16,7 +16,7 @@ public class Player extends Character {
 	public void moveTop() {
 		if (posY < Graph.HEIGHT) {
 			// if
-			posY += 1;
+			posY++;
 		}
 	}
 
@@ -24,25 +24,25 @@ public class Player extends Character {
 	public void moveDown() {
 		if (posY > 0) {
 			//
-			posY -= 1;
+			posY--;
 		}
 	}
 
 	@Override
 	public void moveLeft() {
-		if (posX < Graph.WIDTH) {
+		if (posX > 0) {
 			//
-			posX += 1;
+			posX --;
 		}
 	}
 
 	@Override
 	public void moveRight() {
-		if (posX > 0) {
-			//
-			posX -= 1;
-		}
 
+		if (posX < Graph.WIDTH) {
+			//
+			posX ++;
+		}
 	}
 
 }
