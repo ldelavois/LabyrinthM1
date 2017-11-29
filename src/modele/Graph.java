@@ -59,6 +59,13 @@ public class Graph extends SimpleGraph<Vertex, Edge>{
 		return true;
 	}
 
+	public Edge getEdge(Vertex origin, Directions dir) {
+		Vertex target = null;
+		if(!doesntExist(origin, dir))
+				target = getVertexByDir(origin, dir);
+		return getEdge(origin, target);
+	}
+	
 	public Vertex getVertexByDir(Vertex v, Directions dir) {
 		Vertex res = null;
 		for(Edge e: this.edgeSet()) {
