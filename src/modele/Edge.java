@@ -27,6 +27,14 @@ public class Edge extends DefaultEdge implements Comparable<Edge> {
 			return  ((Vertex)this.getTarget()).compareTo((Vertex)o.getTarget());
 	}
 	
+	public Vertex source() {
+		return (Vertex) this.getSource();
+	}
+	
+	public Vertex target() {
+		return (Vertex) this.getTarget();
+	}
+	
 	public String toString() {
 		String s = "(" + this.getSource().toString() + "<->" 
 					+ this.getTarget().toString() + ")";

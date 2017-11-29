@@ -1,5 +1,7 @@
 package modele;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Random;
 import java.util.Vector;
 
@@ -67,5 +69,60 @@ public class Labyrinth {
 
 	public void setGraph(Graph graph) {
 		this.graph = graph;
+	}
+	
+	private void calculateManhattanDistance(Vertex source, Vertex target) {
+		Queue<Vertex> fifo = new ArrayDeque<Vertex>();
+		target.setNbr(1);
+		fifo.add(target);
+		while(!fifo.isEmpty()) {
+			Vertex current = fifo.remove();
+			for(Directions dir : Directions.values()) {
+				if(this.isOpened(current, dir)) {
+					Vertex next = graph.getVertexByDir(current, dir);
+					if(next.getNbr()==0) {
+						next.setNbr(current.getNbr()+1);
+						if(next!=source)
+							fifo.add(next);
+					}
+				}
+			}
+		}
+	}
+	
+	private boolean isOpened(Vertex v, Directions dir) {
+		boolean verif = false;
+		for(Edge e: graph.edgeSet()) {
+			Vertex source = e.source();
+			Vertex target = e.target();
+			Vertex v2 = null;
+			if(source.equals(v)) v2 = target;
+			if(target.equals(v)) v2 = source;
+			if(v.equals(source) || v.equals(target)) {
+				switch(dir)
+				{
+				case NORTH:
+					verif = v.getX() == v2.getX() && v.getY() == v2.getY() - 1;
+					break;
+				case SOUTH:   
+					verif = v.getX() == v2.getX() && v.getY() == v2.getY() + 1;
+					break;
+				case EAST:
+					verif = v.getX() == v2.getX() + 1 && v.getY() == v2.getY();
+					break;
+				case WEST:
+					verif = v.getX() == v2.getX() - 1 && v.getY() == v2.getY();
+					break;
+				}
+			}
+			if(verif) return verif;
+		}
+		return verif;
+	}
+
+	public void launchManhattan(Vertex source, Vertex target) {
+		for(Vertex vertex : graph.vertexSet())
+			vertex.setNbr(0);
+		calculateManhattanDistance(source, target);
 	}
 }

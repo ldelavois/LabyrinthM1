@@ -102,5 +102,9 @@ public class Vertex implements Comparable<Vertex> {
 	 */
 	public int getNbr() {
 		return nbr;
+	}
+
+	public void setNbr(int i) {
+		nbr=i;
 	}	
 }
