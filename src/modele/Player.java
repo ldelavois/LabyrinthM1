@@ -1,48 +1,42 @@
 package modele;
 
+import controller.Controller;
+
 public class Player extends Character {
 
 	public Player() {
-		setInitialPosition();
+		setPosition();
 	}
 
 	@Override
-	public void setInitialPosition() {
-		this.posX = Graph.WIDTH / 2;
-		this.posY = Graph.HEIGHT / 2;
+	public void setPosition() {
+		this.vertexPos = Controller.getInstance().getLabyrinth().getGraph()
+				.getVertex(new Vertex(Graph.WIDTH / 2, Graph.HEIGHT / 2, -1));
+		this.posX = vertexPos.getX();
+		this.posY = vertexPos.getY();
 	}
 
-	@Override
-	public void moveTop() {
-		if (posY < Graph.HEIGHT) {
-			// if
-			posY++;
-		}
-	}
+	public void move(Directions dir) {
+		if (!(Controller.getInstance().getLabyrinth().isWall(vertexPos, dir))) {
+			switch (dir) {
+			case NORTH:
+				vertexPos = Controller.getInstance().getLabyrinth().getGraph().getVertex(new Vertex(posX, ++posY, -1));
+				break;
 
-	@Override
-	public void moveDown() {
-		if (posY > 0) {
-			//
-			posY--;
-		}
-	}
+			case SOUTH:
+				vertexPos = Controller.getInstance().getLabyrinth().getGraph().getVertex(new Vertex(posX, --posY, -1));
+				break;
 
-	@Override
-	public void moveLeft() {
-		if (posX > 0) {
-			//
-			posX --;
-		}
-	}
+			case WEST:
+				vertexPos = Controller.getInstance().getLabyrinth().getGraph().getVertex(new Vertex(--posX, posY, -1));
+				break;
 
-	@Override
-	public void moveRight() {
-
-		if (posX < Graph.WIDTH) {
-			//
-			posX ++;
-		}
+			case EAST:
+				vertexPos = Controller.getInstance().getLabyrinth().getGraph().getVertex(new Vertex(++posX, posY, -1));
+				break;
+			}
+		} else
+			System.out.println("Wall");
 	}
 
 }

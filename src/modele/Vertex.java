@@ -2,12 +2,16 @@ package modele;
 
 public class Vertex implements Comparable<Vertex> {
 	private int x, y, nbr;
-	
+
 	/**
 	 * Constructeur de la classe.
-	 * @param x : Position horizontale
-	 * @param y : Position verticale
-	 * @param nbr : Identifiant du Vertex
+	 * 
+	 * @param x
+	 *            : Position horizontale
+	 * @param y
+	 *            : Position verticale
+	 * @param nbr
+	 *            : Identifiant du Vertex
 	 */
 	public Vertex(int x, int y, int nbr) {
 		super();
@@ -15,7 +19,7 @@ public class Vertex implements Comparable<Vertex> {
 		this.y = y;
 		this.nbr = nbr;
 	}
-	
+
 	/**
 	 * 
 	 * @return Position verticale du Vertex
@@ -31,31 +35,34 @@ public class Vertex implements Comparable<Vertex> {
 	public int getY() {
 		return y;
 	}
-	
+
 	/**
 	 * Méthode qui permet de savoir si deux Vertex sont voisins
-	 * @param o : Vertex pour lequel on veut savoir si il est notre voisin
+	 * 
+	 * @param o
+	 *            : Vertex pour lequel on veut savoir si il est notre voisin
 	 * @return true si les Vertex sont voisins, false sinon
 	 */
-	public boolean areNeighbors (Vertex o) {
+	public boolean areNeighbors(Vertex o) {
 		int dx = Math.abs(x - o.x);
 		int dy = Math.abs(y - o.y);
-		
-		return (dx==0 && dy==1)||(dx==1 && dy==0);
+
+		return (dx == 0 && dy == 1) || (dx == 1 && dy == 0);
 	}
-	
+
 	@Override
 	public int compareTo(Vertex o) {
-		if(x < o.x)
+		if (x < o.x)
 			return -1;
-		else if(x > o.x)
+		else if (x > o.x)
 			return 1;
-		else if(x == o.x) {
-			if(y < o.y)
+		else if (x == o.x) {
+			if (y < o.y)
 				return -1;
-			else if(y > o.y)
+			else if (y > o.y)
 				return 1;
-			else return 0;
+			else
+				return 0;
 		}
 		return 0;
 	}
@@ -64,26 +71,27 @@ public class Vertex implements Comparable<Vertex> {
 	public String toString() {
 		return "(" + nbr + ")";
 	}
-	
+
 	@Override
 	public boolean equals(Object o) {
 		return x == ((Vertex) o).getX() && y == ((Vertex) o).getY();
 	}
 
 	/**
-	 * Fonction qui permet de savoir si on se trouve dans le Graph en allant dans la direction {@code dir}
-	 * à partir du Vertex courant.
-	 * @param dir : La direction
+	 * Fonction qui permet de savoir si on se trouve dans le Graph en allant dans la
+	 * direction {@code dir} à partir du Vertex courant.
+	 * 
+	 * @param dir
+	 *            : La direction
 	 * @return vrai si on se trouve dans les limites du Graph, faux sinon.
 	 */
 	public boolean inBorders(Directions dir) {
 		boolean verif = false;
-		switch(dir)
-		{
+		switch (dir) {
 		case NORTH:
 			verif = x >= 0 && x < Graph.WIDTH && y - 1 >= 0 && y - 1 < Graph.HEIGHT;
 			break;
-		case SOUTH:   
+		case SOUTH:
 			verif = x >= 0 && x < Graph.WIDTH && y + 1 >= 0 && y + 1 < Graph.HEIGHT;
 			break;
 		case EAST:
@@ -95,7 +103,7 @@ public class Vertex implements Comparable<Vertex> {
 		}
 		return verif;
 	}
-	
+
 	/**
 	 * 
 	 * @return L'identifiant du Vertex
@@ -105,6 +113,7 @@ public class Vertex implements Comparable<Vertex> {
 	}
 
 	public void setNbr(int i) {
-		nbr=i;
-	}	
+		nbr = i;
+	}
+
 }

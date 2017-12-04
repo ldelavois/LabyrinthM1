@@ -4,22 +4,17 @@ public abstract class Character {
 
 	protected int posX;
 	protected int posY;
+	protected Vertex vertexPos;
 
-	public abstract void setInitialPosition();
+	public abstract void setPosition();
 
 	public int getposX() {
-		return this.posX;
+		return this.vertexPos.getX();
 	}
 
 	public int getposY() {
-		return this.posY;
+		return this.vertexPos.getY();
 	}
 
-	public abstract void moveTop();
-
-	public abstract void moveDown();
-
-	public abstract void moveLeft();
-
-	public abstract void moveRight();
+	public abstract void move(Directions dir);
 }
