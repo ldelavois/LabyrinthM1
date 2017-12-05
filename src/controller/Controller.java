@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.stage.Stage;
 import modele.*;
 
 public class Controller {
@@ -38,5 +39,15 @@ public class Controller {
 		player.move(Directions.EAST);
 		System.out.println("posX after:" + player.getposX());
 
+	}
+
+	public static void makeInstance() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void start(Stage stage) {
+		// TODO Auto-generated method stub
+		
 	}
 }
