@@ -54,7 +54,7 @@ public class Labyrinth {
 					yt = y;
 					break;
 				}
-				Vertex next = new Vertex(xt, yt, vertex.getNbr() + 1);
+				Vertex next = new Vertex(xt, yt, vertex.getNbr());
 				graph.addVertex(next);
 				graph.addEdge(vertex, next);
 				buildRandomPath(next);

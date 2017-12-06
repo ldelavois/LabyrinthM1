@@ -21,7 +21,7 @@ public class Enemies extends Character implements ICharacter {
 		for (Directions dir : Directions.values()) {
 			Vertex next = lab.getGraph().getVertexByDir(vertexPos, dir);
 			if (lab.getGraph().containsEdge(vertexPos, next) && (next.getNbr() == vertexPos.getNbr() - 1)) {
-				this.move();
+				this.move(dir);
 			}
 		}
 	}

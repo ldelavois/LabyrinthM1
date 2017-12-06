@@ -14,6 +14,7 @@ public class Main extends Application{
 		controller = Controller.getInstance();
 		System.out.println(controller.getLabyrinth().getGraph());
 		controller.testplayer();
+		System.out.println(controller.getLabyrinth().getGraph());
 		launch(args);
 	}
 

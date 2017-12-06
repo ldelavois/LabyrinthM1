@@ -6,14 +6,16 @@ import javafx.stage.Stage;
 import view.*;
 import modele.*;
 
-public class Controller implements EventHandler<ActionEvent>{
+public class Controller implements EventHandler<ActionEvent> {
 
 	private Labyrinth lab;
 	private static Controller instance = new Controller();
 	private static View view;
+
 	public Controller() {
 		lab = new Labyrinth();
 		view = new View(16, 16);
+
 	}
 
 	public Labyrinth getLabyrinth() {
@@ -29,30 +31,25 @@ public class Controller implements EventHandler<ActionEvent>{
 		Player player = new Player();
 		Enemies enemies = new Enemies();
 		for (Directions dir : Directions.values()) {
-			System.out.println(dir);
-			System.out.println("\nPlayer" + dir);
+			System.out.println("\n" + dir);
+			System.out.println("Player");
 			System.out.println("pos before: " + player.getposX() + " ; " + player.getposY());
 			player.move(Directions.NORTH);
 			System.out.println("pos after: " + player.getposX() + " ; " + player.getposY());
-			
-			//lab.launchManhattan(enemies.getVertexPos(), player.getVertexPos());
-			System.out.println("\nEnemies");
+
+			lab.launchManhattan(enemies.getVertexPos(), player.getVertexPos());
+			System.out.println("Enemies");
 			System.out.println("pos before: " + enemies.getposX() + " ; " + enemies.getposY());
-			player.move(Directions.NORTH);
+			enemies.move();
 			System.out.println("pos after: " + enemies.getposX() + " ; " + enemies.getposY());
 
 		}
 	}
 
-	public static void makeInstance() {
-		// TODO Auto-generated method stub
-
-	}
-
 	public static void start(Stage primaryStage) {
 		view.start(primaryStage);
-//		view.setOnAction(this);
-		
+		// view.setOnAction(this);
+
 	}
 
 	@Override
