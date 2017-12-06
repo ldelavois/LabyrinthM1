@@ -17,4 +17,10 @@ public class Enemies extends Character {
 
 	}
 
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -1,12 +1,10 @@
 package modele;
 
-public abstract class Character {
+public abstract class Character implements ICharacter {
 
 	protected int posX;
 	protected int posY;
 	protected Vertex vertexPos;
-
-	public abstract void setPosition();
 
 	public int getposX() {
 		return this.vertexPos.getX();

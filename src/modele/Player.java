@@ -39,4 +39,10 @@ public class Player extends Character {
 			System.out.println("Wall");
 	}
 
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
