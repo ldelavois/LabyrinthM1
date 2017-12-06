@@ -14,13 +14,12 @@ public class Main extends Application{
 		controller = Controller.getInstance();
 		System.out.println(controller.getLabyrinth().getGraph());
 		controller.testplayer();
-		launch();
+		launch(args);
 	}
 
 	@Override
-	public void start(Stage stage)  {
-		Controller.makeInstance(); //à créer (voir TD3)
-		Controller.start(stage); 	//à créer (voir TD3)
+	public void start(Stage primaryStage)  {
+		Controller.start(primaryStage);
 	}
 		
 	@Override 
@@ -29,7 +28,7 @@ public class Main extends Application{
 		System.exit(0);
 	}
 	
-		
+
 		
 		
 	}

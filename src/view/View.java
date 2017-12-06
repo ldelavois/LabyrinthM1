@@ -4,28 +4,27 @@ import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 
 
-public class ViewFrame {
+public class View {
 	static final int SPAN=4;
 	static final int WALL=2;
 	static final int CELL=9;
 	public static final Paint WALL_COLOR= Color.BURLYWOOD;
 	public static final Paint SCENE_COLOR= Color.WHITE;
-	private static Scene scene;
+	private Scene scene;
+	public static Group pane = new Group();
 
 	
-public static void drawFrame(Stage stage, int nbrX, int nbrY)
+public View(int nbrX, int nbrY)
 {
-	Group pane= new Group();
 	scene = new Scene(pane, ((WALL + CELL)* nbrX + WALL)* SPAN,
 			((WALL+CELL)* nbrY + WALL)*SPAN);
 	scene.setFill(SCENE_COLOR);
 	
 	Rectangle square;
-	stage.setScene(scene);
 	
 	square= new Rectangle(0,0,SPAN * ( nbrX * (CELL+WALL) + WALL) , WALL * SPAN ) ;
 	square.setFill (WALL_COLOR) ;
@@ -55,9 +54,12 @@ public static void drawFrame(Stage stage, int nbrX, int nbrY)
 			square.setFill(WALL_COLOR) ;
 			pane.getChildren().add(square);
 			}
-		}
-
-	
+		}	
+}
+public void start(Stage primaryStage) {
+	primaryStage.setScene(scene);
+	primaryStage.setTitle("Labyrinthe");
+	primaryStage.show();
 }
 
 

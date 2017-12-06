@@ -1,13 +1,13 @@
 package controller;
 
 import modele.Labyrinth;
-import view.ViewFrame;
+import view.View;
 
 public class LabyrinthController {
 	private Labyrinth labyrinth;
-	private ViewFrame viewframe;
+	private View viewframe;
 	
-	private LabyrinthController(Labyrinth lab, ViewFrame vf) {
+	private LabyrinthController(Labyrinth lab, View vf) {
 		labyrinth = lab;
 		viewframe = vf;
 	}

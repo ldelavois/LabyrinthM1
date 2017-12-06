@@ -1,15 +1,19 @@
 package controller;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
+import view.*;
 import modele.*;
 
-public class Controller {
+public class Controller implements EventHandler<ActionEvent>{
 
 	private Labyrinth lab;
 	private static Controller instance = new Controller();
-
+	private static View view;
 	public Controller() {
 		lab = new Labyrinth();
+		view = new View(16, 16);
 	}
 
 	public Labyrinth getLabyrinth() {
@@ -46,7 +50,14 @@ public class Controller {
 		
 	}
 
-	public static void start(Stage stage) {
+	public static void start(Stage primaryStage) {
+		view.start(primaryStage);
+//		view.setOnAction(this);
+		
+	}
+
+	@Override
+	public void handle(ActionEvent event) {
 		// TODO Auto-generated method stub
 		
 	}
