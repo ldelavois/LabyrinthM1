@@ -1,6 +1,8 @@
 package modele;
 
-public class Enemies extends Character {
+import controller.Controller;
+
+public class Enemies extends Character implements ICharacter {
 
 	public Enemies() {
 		setPosition();
@@ -8,19 +10,22 @@ public class Enemies extends Character {
 
 	@Override
 	public void setPosition() {
-
+		this.vertexPos = lab.getGraph()
+				.getVertex(new Vertex((int) (Math.random() * 16), (int) (Math.random() * 16), 0));
+		this.posX = vertexPos.getX();
+		this.posY = vertexPos.getY();
 	}
 
-	@Override
-	public void move(Directions dir) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void move() {
-		// TODO Auto-generated method stub
-		
+		this.vertexPos = lab.getGraph().getVertex(new Vertex(posX, posY, 0));
+		for (Directions dir : Directions.values()) {
+			Vertex next = lab.getGraph().getVertexByDir(vertexPos, dir);
+			if (lab.getGraph().containsEdge(vertexPos, next) && (next.getNbr() == vertexPos.getNbr() - 1)) {
+				this.move();
+			}
+		}
 	}
+
+
 
 }

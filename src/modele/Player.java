@@ -2,7 +2,7 @@ package modele;
 
 import controller.Controller;
 
-public class Player extends Character {
+public class Player extends Character implements ICharacter{
 
 	public Player() {
 		setPosition();
@@ -16,33 +16,7 @@ public class Player extends Character {
 		this.posY = vertexPos.getY();
 	}
 
-	public void move(Directions dir) {
-		if (!(Controller.getInstance().getLabyrinth().isWall(vertexPos, dir))) {
-			switch (dir) {
-			case NORTH:
-				vertexPos = Controller.getInstance().getLabyrinth().getGraph().getVertex(new Vertex(posX, ++posY, -1));
-				break;
+	
 
-			case SOUTH:
-				vertexPos = Controller.getInstance().getLabyrinth().getGraph().getVertex(new Vertex(posX, --posY, -1));
-				break;
-
-			case WEST:
-				vertexPos = Controller.getInstance().getLabyrinth().getGraph().getVertex(new Vertex(--posX, posY, -1));
-				break;
-
-			case EAST:
-				vertexPos = Controller.getInstance().getLabyrinth().getGraph().getVertex(new Vertex(++posX, posY, -1));
-				break;
-			}
-		} else
-			System.out.println("Wall");
-	}
-
-	@Override
-	public void move() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

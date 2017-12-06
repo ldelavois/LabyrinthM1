@@ -23,31 +23,30 @@ public class Controller {
 	// TEST player
 	public void testplayer() {
 		Player player = new Player();
-		System.out.println("\nposY before:" + player.getposY());
-		player.move(Directions.NORTH);
-		System.out.println("posY after:" + player.getposY());
+		Enemies enemies = new Enemies();
+		for (Directions dir : Directions.values()) {
+			System.out.println(dir);
+			System.out.println("\nPlayer" + dir);
+			System.out.println("pos before: " + player.getposX() + " ; " + player.getposY());
+			player.move(Directions.NORTH);
+			System.out.println("pos after: " + player.getposX() + " ; " + player.getposY());
+			
+			//lab.launchManhattan(enemies.getVertexPos(), player.getVertexPos());
+			System.out.println("\nEnemies");
+			System.out.println("pos before: " + enemies.getposX() + " ; " + enemies.getposY());
+			player.move(Directions.NORTH);
+			System.out.println("pos after: " + enemies.getposX() + " ; " + enemies.getposY());
 
-		System.out.println("\nposY before:" + player.getposY());
-		player.move(Directions.SOUTH);
-		System.out.println("posY after:" + player.getposY());
-
-		System.out.println("\nposX before:" + player.getposX());
-		player.move(Directions.WEST);
-		System.out.println("posX after:" + player.getposX());
-
-		System.out.println("\nposX before:" + player.getposX());
-		player.move(Directions.EAST);
-		System.out.println("posX after:" + player.getposX());
-
+		}
 	}
 
 	public static void makeInstance() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public static void start(Stage stage) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
