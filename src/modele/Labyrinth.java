@@ -9,6 +9,7 @@ public class Labyrinth {
 
 	private Random rand;
 	private Graph graph;
+	private static Labyrinth lab = new Labyrinth();
 
 	public Labyrinth() {
 		graph = new Graph();
@@ -98,5 +99,9 @@ public class Labyrinth {
 	public boolean isWall(Vertex vertex, Directions dir) {
 		Edge edge = graph.getEdge(vertex, dir);
 		return (edge == null);
+	}
+
+	public static Labyrinth getInstanceLab() {
+		return lab;
 	}
 }
