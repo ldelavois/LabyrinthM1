@@ -2,18 +2,23 @@ package view;
 
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import modele.Edge;
 import modele.Graph;
 import modele.Labyrinth;
+import modele.Vertex;
 import controller.Controller;
 import controller.LabyrinthController;
 import controller.PlayerController;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 
 public class View {
 	
@@ -23,7 +28,9 @@ public class View {
 	public static final Paint WALL_COLOR = Color.BURLYWOOD;
 	public static final Paint SCENE_COLOR = Color.WHITE;
 	private Scene scene;
-	public static Group pane = new Group();
+	public static Pane pane = new Pane();
+	private Image imagePlayer = new Image("file:resources/player.png");
+	ImageView player = new ImageView(imagePlayer);
 
 	
 	public View(int nbrX, int nbrY) {
@@ -63,6 +70,7 @@ public class View {
 		Edge e;
 		for (int x = 0; x < Graph.WIDTH; x++) {
 			for (int y = 0; y < Graph.HEIGHT; y++) {
+				
 				if (x + 1 < Graph.WIDTH) {
 					e = g.getEdge(g.getVertex(x, y), g.getVertex(x + 1, y));
 					if (e == null || (e.getDoorType() != Edge.DoorType.NONE)) {
@@ -114,14 +122,21 @@ public class View {
 		}
 	}
 
-
+	public void updatePlayerPosition(Vertex c) {
+		// TODO Ici on dessine les personnages (Vertex à remplacer par Character)
+		
+		player.setX((int) ((WALL + c.getX() * (WALL + CELL)) * SPAN));
+		player.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
+	}
+	
 	public void start(Stage primaryStage, Labyrinth lab) {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Labyrinthe");
 		primaryStage.show();
 		drawGraph(lab.getGraph());
+		pane.getChildren().add(player);
 	}
-
+	
 	public void keyPressed(PlayerController eventhandler) {
 		scene.setOnKeyPressed(eventhandler);
 	}

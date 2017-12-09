@@ -19,7 +19,7 @@ public class Controller {
 	private Controller() {
 		lab = Labyrinth.getInstanceLab();
 		view = new View(Graph.WIDTH, Graph.HEIGHT);
-		playerController = new PlayerController();
+		playerController = new PlayerController(view);
 		// player = new Player();
 	}
 
@@ -30,7 +30,7 @@ public class Controller {
 	public static Controller getInstance() {
 		return instance;
 	}
-
+	
 	// TEST player
 	public void testennemy() {
 		Ennemy ennemy = new Ennemy();
