@@ -12,9 +12,9 @@ public class Main extends Application {
 	public static void main(String[] args) {
 
 		controller = Controller.getInstance();
-		System.out.println(controller.getLabyrinth().getGraph());
+		System.out.println(Controller.getLabyrinth().getGraph());
 		//controller.testennemy();
-		System.out.println(controller.getLabyrinth().getGraph());
+		System.out.println(Controller.getLabyrinth().getGraph());
 		launch(args);
 	}
 

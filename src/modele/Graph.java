@@ -110,18 +110,9 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 
 	// retourne le vertex dans le graph équivalent
-	public Vertex getVertex(Vertex vertex) {
-		List<Vertex> vertices = new ArrayList<Vertex>(this.vertexSet());
-		for (Vertex v : vertices) {
-			if (v.equals(vertex))
-				return v;
-		}
-		return null;
-	}
-
 	public Vertex getVertex(int x, int y) {
-		for(Vertex v : vertexSet())
-			if(v.getX() == x && v.getY() == y)
+		for (Vertex v : vertexSet())
+			if (v.getX() == x && v.getY() == y)
 				return v;
 		return null;
 	}

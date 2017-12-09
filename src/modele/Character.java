@@ -20,30 +20,34 @@ public abstract class Character implements ICharacter {
 		return this.vertexPos;
 	}
 
-	public void setPosition() {
-		this.vertexPos = Labyrinth.getInstanceLab().getGraph()
-				.getVertex(new Vertex((int) (Math.random() * Graph.WIDTH), (int) (Math.random() * Graph.HEIGHT), 0));
-		this.posX = vertexPos.getX();
-		this.posY = vertexPos.getY();
+	public void setPosition(Labyrinth lab, int x, int y) {
+
+		this.posX = x;
+		this.posY = y;
+		this.vertexPos = lab.getGraph().getVertex(x, y);
 	}
 
-	public void move(Directions dir) {
-		if (!(Labyrinth.getInstanceLab().isWall(vertexPos, dir))) {
+	public void move(Labyrinth lab, Directions dir) {
+		if (!(lab.isWall(vertexPos, dir))) {
 			switch (dir) {
 			case NORTH:
-				vertexPos = Labyrinth.getInstanceLab().getGraph().getVertex(new Vertex(posX, ++posY, -1));
+				posY--;
+				vertexPos = lab.getGraph().getVertex(posX, posY);
 				break;
 
 			case SOUTH:
-				vertexPos = Labyrinth.getInstanceLab().getGraph().getVertex(new Vertex(posX, --posY, -1));
+				posY++;
+				vertexPos = lab.getGraph().getVertex(posX, posY);
 				break;
 
 			case WEST:
-				vertexPos = Labyrinth.getInstanceLab().getGraph().getVertex(new Vertex(--posX, posY, -1));
+				posX--;
+				vertexPos = lab.getGraph().getVertex(posX, posY);
 				break;
 
 			case EAST:
-				vertexPos = Labyrinth.getInstanceLab().getGraph().getVertex(new Vertex(++posX, posY, -1));
+				posX++;
+				vertexPos = lab.getGraph().getVertex(posX, posY);
 				break;
 			}
 		} else

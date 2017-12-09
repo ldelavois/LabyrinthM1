@@ -37,28 +37,28 @@ public class PlayerController implements CharacterController, EventHandler<KeyEv
 		
 		case UP:
 			System.out.println("\n"+event.getCode());
-			player.move(Directions.NORTH);
+			player.move(Controller.getLabyrinth(),Directions.NORTH);
 			view.updatePlayerPosition(player.getVertexPos());
 			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 			
 		case DOWN:
 			System.out.println("\n"+event.getCode());
-			player.move(Directions.SOUTH);
+			player.move(Controller.getLabyrinth(),Directions.SOUTH);
 			view.updatePlayerPosition(player.getVertexPos());
 			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 			
 		case LEFT:
 			System.out.println("\n"+event.getCode());
-			player.move(Directions.WEST);
+			player.move(Controller.getLabyrinth(),Directions.WEST);
 			view.updatePlayerPosition(player.getVertexPos());
 			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 			
 		case RIGHT:
 			System.out.println("\n"+event.getCode());
-			player.move(Directions.EAST);
+			player.move(Controller.getLabyrinth(),Directions.EAST);
 			view.updatePlayerPosition(player.getVertexPos());
 			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;

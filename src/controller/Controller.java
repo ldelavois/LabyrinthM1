@@ -23,7 +23,7 @@ public class Controller {
 		// player = new Player();
 	}
 
-	public Labyrinth getLabyrinth() {
+	public static Labyrinth getLabyrinth() {
 		return lab;
 	}
 
@@ -38,7 +38,7 @@ public class Controller {
 		lab.launchManhattan(ennemy.getVertexPos(), ennemy.getVertexPos());
 		System.out.println("Enemies");
 		System.out.println("pos before: " + ennemy.getposX() + " ; " + ennemy.getposY());
-		ennemy.move();
+		ennemy.move(lab);
 		System.out.println("pos after: " + ennemy.getposX() + " ; " + ennemy.getposY());
 
 	}

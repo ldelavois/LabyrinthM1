@@ -2,9 +2,9 @@ package modele;
 
 public interface ICharacter {
 
-	public void setPosition();
+	public void setPosition(Labyrinth lab, int x, int y);
 
-	public void move(Directions dir);
+	public void move(Labyrinth lab, Directions dir);
 
 	public int getposX();
 
