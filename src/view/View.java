@@ -3,7 +3,11 @@ package view;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import modele.Edge;
+import modele.Graph;
+import modele.Labyrinth;
 import controller.Controller;
+import controller.LabyrinthController;
 import controller.PlayerController;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -54,11 +58,68 @@ public class View {
 			}
 		}
 	}
+	
+	public void drawGraph(Graph g) {
+		Edge e;
+		for (int x = 0; x < Graph.WIDTH; x++) {
+			for (int y = 0; y < Graph.HEIGHT; y++) {
+				if (x + 1 < Graph.WIDTH) {
+					e = g.getEdge(g.getVertex(x, y), g.getVertex(x + 1, y));
+					if (e == null || (e.getDoorType() != Edge.DoorType.NONE)) {
+						drawWall(x, y, x + 1, y, Color.CHOCOLATE);
+						if (e != null && (e.getDoorType() == Edge.DoorType.OPENED)) {
+							drawWall(x, y, x + 1, y, Color.BLUE);
+						}
+						else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
+							drawWall(x, y, x + 1, y, Color.DEEPPINK);
+						}
+					}
+				}
 
-	public void start(Stage primaryStage) {
+				if (y + 1 < Graph.HEIGHT) {
+					e = g.getEdge(g.getVertex(x, y), g.getVertex(x, y + 1));
+					if (e == null || (e.getDoorType() != Edge.DoorType.NONE)) {
+						drawWall(x, y, x, y + 1, Color.CHOCOLATE);
+						if (e != null && (e.getDoorType() == Edge.DoorType.OPENED)) {
+							drawWall(x, y, x, y + 1, Color.BLUE);
+						}
+						else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
+							drawWall(x, y, x + 1, y, Color.DEEPPINK);
+						}
+					}
+
+				}
+			}
+		}
+	}
+	
+	public void drawWall(int xs, int ys, int xt, int yt, Paint color) {
+		int x = 0, y = 0, xspan = 0, yspan = 0;
+		if (ys == yt) {
+			x = ((WALL + CELL) + (WALL + CELL) * ((int) (xs + xt) / 2)) * SPAN;
+			y = (WALL + ys * (WALL + CELL)) * SPAN;
+			xspan = WALL * SPAN;
+			yspan = CELL * SPAN;
+			Rectangle square = new Rectangle(x, y, xspan, yspan);
+			square.setFill(color);
+			pane.getChildren().add(square);
+		} else if (xs == xt) {
+			x = (WALL + xs * (WALL + CELL)) * SPAN;
+			y = ((WALL + CELL) + (WALL + CELL) * ((int) (ys + yt) / 2)) * SPAN;
+			xspan = CELL * SPAN;
+			yspan = WALL * SPAN;
+			Rectangle square = new Rectangle(x, y, xspan, yspan);
+			square.setFill(color);
+			pane.getChildren().add(square);
+		}
+	}
+
+
+	public void start(Stage primaryStage, Labyrinth lab) {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Labyrinthe");
 		primaryStage.show();
+		drawGraph(lab.getGraph());
 	}
 
 	public void keyPressed(PlayerController eventhandler) {

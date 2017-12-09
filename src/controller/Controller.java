@@ -10,7 +10,7 @@ import modele.*;
 
 public class Controller {
 
-	private Labyrinth lab;
+	private static Labyrinth lab;
 	private static Controller instance = new Controller();
 	private static View view;
 	private static PlayerController playerController;
@@ -44,7 +44,7 @@ public class Controller {
 	}
 
 	public static void start(Stage primaryStage) {
-		view.start(primaryStage);
+		view.start(primaryStage, lab);
 		view.keyPressed(playerController);
 	}
 

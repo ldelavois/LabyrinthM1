@@ -4,7 +4,7 @@ import org.jgrapht.graph.DefaultEdge;
 
 @SuppressWarnings("serial")
 public class Edge extends DefaultEdge implements Comparable<Edge> {
-	private enum DoorType {
+	public enum DoorType {
 		OPENED, CLOSED, NONE
 	}
 
