@@ -66,12 +66,12 @@ public class View {
 				if (x + 1 < Graph.WIDTH) {
 					e = g.getEdge(g.getVertex(x, y), g.getVertex(x + 1, y));
 					if (e == null || (e.getDoorType() != Edge.DoorType.NONE)) {
-						drawWall(x, y, x + 1, y, Color.CHOCOLATE);
+						drawWall(x, y, x + 1, y, WALL_COLOR);
 						if (e != null && (e.getDoorType() == Edge.DoorType.OPENED)) {
-							drawWall(x, y, x + 1, y, Color.BLUE);
+							drawWall(x, y, x + 1, y, Color.RED);
 						}
 						else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
-							drawWall(x, y, x + 1, y, Color.DEEPPINK);
+							drawWall(x, y, x + 1, y, Color.GREEN);
 						}
 					}
 				}
@@ -79,12 +79,12 @@ public class View {
 				if (y + 1 < Graph.HEIGHT) {
 					e = g.getEdge(g.getVertex(x, y), g.getVertex(x, y + 1));
 					if (e == null || (e.getDoorType() != Edge.DoorType.NONE)) {
-						drawWall(x, y, x, y + 1, Color.CHOCOLATE);
+						drawWall(x, y, x, y + 1, WALL_COLOR);
 						if (e != null && (e.getDoorType() == Edge.DoorType.OPENED)) {
-							drawWall(x, y, x, y + 1, Color.BLUE);
+							drawWall(x, y, x, y + 1, Color.GREEN);
 						}
 						else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
-							drawWall(x, y, x + 1, y, Color.DEEPPINK);
+							drawWall(x, y, x + 1, y, Color.RED);
 						}
 					}
 
