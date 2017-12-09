@@ -14,13 +14,14 @@ public class Controller {
 	private static Controller instance = new Controller();
 	private static View view;
 	private static PlayerController playerController;
-	// private Player player;
+	private static EnnemyController ennemyController;
 
 	private Controller() {
-		lab = Labyrinth.getInstanceLab();
+		lab = new Labyrinth();
 		view = new View(Graph.WIDTH, Graph.HEIGHT);
 		playerController = new PlayerController(view);
-		// player = new Player();
+		ennemyController = new EnnemyController(view);
+
 	}
 
 	public static Labyrinth getLabyrinth() {
@@ -30,22 +31,17 @@ public class Controller {
 	public static Controller getInstance() {
 		return instance;
 	}
-	
-	// TEST player
-	public void testennemy() {
-		Ennemy ennemy = new Ennemy();
-
-		lab.launchManhattan(ennemy.getVertexPos(), ennemy.getVertexPos());
-		System.out.println("Enemies");
-		System.out.println("pos before: " + ennemy.getposX() + " ; " + ennemy.getposY());
-		ennemy.move(lab);
-		System.out.println("pos after: " + ennemy.getposX() + " ; " + ennemy.getposY());
-
-	}
 
 	public static void start(Stage primaryStage) {
 		view.start(primaryStage, lab);
 		view.keyPressed(playerController);
 	}
 
+	public PlayerController getPlayerController() {
+		return playerController;
+	}
+
+	public EnnemyController getEnnemyController() {
+		return ennemyController;
+	}
 }

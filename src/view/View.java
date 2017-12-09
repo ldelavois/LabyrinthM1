@@ -21,7 +21,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 public class View {
-	
+
 	static final int SPAN = 4;
 	static final int WALL = 2;
 	static final int CELL = 9;
@@ -31,8 +31,9 @@ public class View {
 	public static Pane pane = new Pane();
 	private Image imagePlayer = new Image("file:resources/player.png");
 	ImageView player = new ImageView(imagePlayer);
+	private Image imageEnnemy = new Image("file:resources/bad.png");
+	ImageView ennemy = new ImageView(imageEnnemy);
 
-	
 	public View(int nbrX, int nbrY) {
 		scene = new Scene(pane, ((WALL + CELL) * nbrX + WALL) * SPAN, ((WALL + CELL) * nbrY + WALL) * SPAN);
 		scene.setFill(SCENE_COLOR);
@@ -65,20 +66,19 @@ public class View {
 			}
 		}
 	}
-	
+
 	public void drawGraph(Graph g) {
 		Edge e;
 		for (int x = 0; x < Graph.WIDTH; x++) {
 			for (int y = 0; y < Graph.HEIGHT; y++) {
-				
+
 				if (x + 1 < Graph.WIDTH) {
 					e = g.getEdge(g.getVertex(x, y), g.getVertex(x + 1, y));
 					if (e == null || (e.getDoorType() != Edge.DoorType.NONE)) {
 						drawWall(x, y, x + 1, y, WALL_COLOR);
 						if (e != null && (e.getDoorType() == Edge.DoorType.OPENED)) {
 							drawWall(x, y, x + 1, y, Color.RED);
-						}
-						else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
+						} else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
 							drawWall(x, y, x + 1, y, Color.GREEN);
 						}
 					}
@@ -90,8 +90,7 @@ public class View {
 						drawWall(x, y, x, y + 1, WALL_COLOR);
 						if (e != null && (e.getDoorType() == Edge.DoorType.OPENED)) {
 							drawWall(x, y, x, y + 1, Color.GREEN);
-						}
-						else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
+						} else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
 							drawWall(x, y, x + 1, y, Color.RED);
 						}
 					}
@@ -100,7 +99,7 @@ public class View {
 			}
 		}
 	}
-	
+
 	public void drawWall(int xs, int ys, int xt, int yt, Paint color) {
 		int x = 0, y = 0, xspan = 0, yspan = 0;
 		if (ys == yt) {
@@ -124,19 +123,27 @@ public class View {
 
 	public void updatePlayerPosition(Vertex c) {
 		// TODO Ici on dessine les personnages (Vertex à remplacer par Character)
-		
+
 		player.setX((int) ((WALL + c.getX() * (WALL + CELL)) * SPAN));
 		player.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
 	}
-	
+
+	public void updateEnnemyPosition(Vertex c) {
+		// TODO Ici on dessine les ennemies (Vertex à remplacer par Character)
+
+		ennemy.setX((int) ((WALL + c.getX() * (WALL + CELL)) * SPAN));
+		ennemy.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
+	}
+
 	public void start(Stage primaryStage, Labyrinth lab) {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Labyrinthe");
 		primaryStage.show();
 		drawGraph(lab.getGraph());
 		pane.getChildren().add(player);
+		pane.getChildren().add(ennemy);
 	}
-	
+
 	public void keyPressed(PlayerController eventhandler) {
 		scene.setOnKeyPressed(eventhandler);
 	}

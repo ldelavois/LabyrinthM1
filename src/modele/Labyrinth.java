@@ -9,7 +9,7 @@ public class Labyrinth {
 
 	private Random rand;
 	private Graph graph;
-	private static Labyrinth lab = new Labyrinth();
+	private static Labyrinth lab;
 
 	public Labyrinth() {
 		graph = new Graph();
@@ -101,7 +101,4 @@ public class Labyrinth {
 		return (edge == null);
 	}
 
-	public static Labyrinth getInstanceLab() {
-		return lab;
-	}
 }
