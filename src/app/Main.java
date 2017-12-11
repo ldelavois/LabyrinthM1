@@ -10,17 +10,13 @@ public class Main extends Application {
 	private static Controller controller;
 
 	public static void main(String[] args) {
-
 		controller = Controller.getInstance();
-		System.out.println(Controller.getLabyrinth().getGraph());
-		//controller.testennemy();
-		System.out.println(Controller.getLabyrinth().getGraph());
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) {
-		Controller.start(primaryStage);
+		controller.start(primaryStage);
 	}
 
 	@Override

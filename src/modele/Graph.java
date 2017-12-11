@@ -5,6 +5,11 @@ import java.util.List;
 
 import org.jgrapht.graph.SimpleGraph;
 
+/**
+ * 
+ * @author 
+ *
+ */
 @SuppressWarnings("serial")
 public class Graph extends SimpleGraph<Vertex, Edge> {
 	/**
@@ -66,13 +71,25 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 		return true;
 	}
 
+	/**	
+	 * 
+	 * @param origin
+	 * @param dir
+	 * @return
+	 */
 	public Edge getEdge(Vertex origin, Directions dir) {
 		Vertex target = null;
 		if (!doesntExist(origin, dir))
 			target = getVertexByDir(origin, dir);
 		return getEdge(origin, target);
 	}
-
+	
+	/**
+	 * 
+	 * @param v
+	 * @param dir
+	 * @return
+	 */
 	public Vertex getVertexByDir(Vertex v, Directions dir) {
 		Vertex res = null;
 		for (Edge e : this.edgeSet()) {
@@ -110,6 +127,12 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 
 	// retourne le vertex dans le graph équivalent
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	public Vertex getVertex(int x, int y) {
 		for (Vertex v : vertexSet())
 			if (v.getX() == x && v.getY() == y)

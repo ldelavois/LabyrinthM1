@@ -2,6 +2,11 @@ package modele;
 
 import org.jgrapht.graph.DefaultEdge;
 
+/**
+ * 
+ * @author 
+ *
+ */
 @SuppressWarnings("serial")
 public class Edge extends DefaultEdge implements Comparable<Edge> {
 	public enum DoorType {
@@ -14,6 +19,8 @@ public class Edge extends DefaultEdge implements Comparable<Edge> {
 	 */
 	private DoorType doorType;
 
+	/**
+	 */
 	public Edge() {
 		super();
 		setDoorType(DoorType.NONE);
@@ -28,10 +35,18 @@ public class Edge extends DefaultEdge implements Comparable<Edge> {
 			return ((Vertex) this.getTarget()).compareTo((Vertex) o.getTarget());
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Vertex source() {
 		return (Vertex) this.getSource();
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Vertex target() {
 		return (Vertex) this.getTarget();
 	}
@@ -42,10 +57,18 @@ public class Edge extends DefaultEdge implements Comparable<Edge> {
 		return s;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public DoorType getDoorType() {
 		return doorType;
 	}
 
+	/**
+	 * 
+	 * @param doorType
+	 */
 	private void setDoorType(DoorType doorType) {
 		this.doorType = doorType;
 	}

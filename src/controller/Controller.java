@@ -8,6 +8,11 @@ import javafx.stage.Stage;
 import view.*;
 import modele.*;
 
+/**
+ * 
+ * @author 
+ *
+ */
 public class Controller {
 
 	private static Labyrinth lab;
@@ -15,7 +20,10 @@ public class Controller {
 	private static View view;
 	private static PlayerController playerController;
 	private static EnnemyController ennemyController;
-
+	
+	/**
+	 * 
+	 */
 	private Controller() {
 		lab = new Labyrinth();
 		view = new View(Graph.WIDTH, Graph.HEIGHT);
@@ -24,23 +32,43 @@ public class Controller {
 
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Labyrinth getLabyrinth() {
 		return lab;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Controller getInstance() {
 		return instance;
 	}
 
-	public static void start(Stage primaryStage) {
+	/**
+	 * 
+	 * @param primaryStage
+	 */
+	public void start(Stage primaryStage) {
 		view.start(primaryStage, lab);
 		view.keyPressed(playerController);
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public PlayerController getPlayerController() {
 		return playerController;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public EnnemyController getEnnemyController() {
 		return ennemyController;
 	}

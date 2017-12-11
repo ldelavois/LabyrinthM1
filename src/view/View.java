@@ -20,12 +20,23 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
+/**
+ * 
+ * @author 
+ *
+ */
 public class View {
 
 	static final int SPAN = 4;
 	static final int WALL = 2;
 	static final int CELL = 9;
+	/**
+	 * 
+	 */
 	public static final Paint WALL_COLOR = Color.BURLYWOOD;
+	/**
+	 * 
+	 */
 	public static final Paint SCENE_COLOR = Color.WHITE;
 	private Scene scene;
 	public static Pane pane = new Pane();
@@ -34,6 +45,11 @@ public class View {
 	private Image imageEnnemy = new Image("file:resources/bad.png");
 	ImageView ennemy = new ImageView(imageEnnemy);
 
+	/**
+	 * 
+	 * @param nbrX
+	 * @param nbrY
+	 */
 	public View(int nbrX, int nbrY) {
 		scene = new Scene(pane, ((WALL + CELL) * nbrX + WALL) * SPAN, ((WALL + CELL) * nbrY + WALL) * SPAN);
 		scene.setFill(SCENE_COLOR);
@@ -67,6 +83,10 @@ public class View {
 		}
 	}
 
+	/**
+	 * 
+	 * @param g
+	 */
 	public void drawGraph(Graph g) {
 		Edge e;
 		for (int x = 0; x < Graph.WIDTH; x++) {
@@ -100,6 +120,14 @@ public class View {
 		}
 	}
 
+	/**
+	 * 
+	 * @param xs
+	 * @param ys
+	 * @param xt
+	 * @param yt
+	 * @param color
+	 */
 	public void drawWall(int xs, int ys, int xt, int yt, Paint color) {
 		int x = 0, y = 0, xspan = 0, yspan = 0;
 		if (ys == yt) {
@@ -121,6 +149,10 @@ public class View {
 		}
 	}
 
+	/**
+	 * 
+	 * @param c
+	 */
 	public void updatePlayerPosition(Vertex c) {
 		// TODO Ici on dessine les personnages (Vertex à remplacer par Character)
 
@@ -128,6 +160,10 @@ public class View {
 		player.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
 	}
 
+	/**
+	 * 
+	 * @param c
+	 */
 	public void updateEnnemyPosition(Vertex c) {
 		// TODO Ici on dessine les ennemies (Vertex à remplacer par Character)
 
@@ -135,6 +171,11 @@ public class View {
 		ennemy.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
 	}
 
+	/**
+	 * 
+	 * @param primaryStage
+	 * @param lab
+	 */
 	public void start(Stage primaryStage, Labyrinth lab) {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Labyrinthe");
@@ -144,6 +185,10 @@ public class View {
 		pane.getChildren().add(ennemy);
 	}
 
+	/**
+	 * 
+	 * @param eventhandler
+	 */
 	public void keyPressed(PlayerController eventhandler) {
 		scene.setOnKeyPressed(eventhandler);
 	}

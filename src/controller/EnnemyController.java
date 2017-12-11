@@ -3,11 +3,20 @@ package controller;
 import modele.Ennemy;
 import view.View;
 
+/**
+ * 
+ * @author 
+ *
+ */
 public class EnnemyController implements CharacterController {
 
 	private Ennemy ennemy;
 	private View view;
 	
+	/**
+	 * 
+	 * @param view
+	 */
 	public EnnemyController(View view) {
 		ennemy = new Ennemy();
 		this.view=view;
@@ -25,7 +34,10 @@ public class EnnemyController implements CharacterController {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	/**	
+	 * 
+	 */
 	public void testennemy() {
 		Controller.getLabyrinth().launchManhattan(ennemy.getVertexPos(), Controller.getInstance().getPlayerController().getPlayer().getVertexPos());
 		System.out.println("Enemies");

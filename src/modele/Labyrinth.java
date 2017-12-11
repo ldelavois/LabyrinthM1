@@ -5,12 +5,20 @@ import java.util.Queue;
 import java.util.Random;
 import java.util.Vector;
 
+/**
+ * 
+ * @author 
+ *
+ */
 public class Labyrinth {
 
 	private Random rand;
 	private Graph graph;
 	private static Labyrinth lab;
 
+	/**
+	 * 
+	 */
 	public Labyrinth() {
 		graph = new Graph();
 		rand = new Random();
@@ -19,6 +27,10 @@ public class Labyrinth {
 		buildRandomPath(v);
 	}
 
+	/**
+	 * 
+	 * @param vertex
+	 */
 	private void buildRandomPath(Vertex vertex) {
 		Vector<Directions> v = new Vector<Directions>();
 		for (int i = 0; i < 4; i++)
@@ -63,6 +75,10 @@ public class Labyrinth {
 		}
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Graph getGraph() {
 		return graph;
 	}
@@ -71,6 +87,11 @@ public class Labyrinth {
 		this.graph = graph;
 	}
 
+	/**
+	 * 
+	 * @param source
+	 * @param target
+	 */
 	private void calculateManhattanDistance(Vertex source, Vertex target) {
 		Queue<Vertex> fifo = new ArrayDeque<Vertex>();
 		target.setNbr(1);
@@ -90,12 +111,23 @@ public class Labyrinth {
 		}
 	}
 
+	/**
+	 * 
+	 * @param source
+	 * @param target
+	 */
 	public void launchManhattan(Vertex source, Vertex target) {
 		for (Vertex vertex : graph.vertexSet())
 			vertex.setNbr(0);
 		calculateManhattanDistance(source, target);
 	}
 
+	/**
+	 * 
+	 * @param vertex
+	 * @param dir
+	 * @return
+	 */
 	public boolean isWall(Vertex vertex, Directions dir) {
 		Edge edge = graph.getEdge(vertex, dir);
 		return (edge == null);

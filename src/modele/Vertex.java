@@ -1,5 +1,10 @@
 package modele;
 
+/**
+ * 
+ * @author 
+ *
+ */
 public class Vertex implements Comparable<Vertex> {
 	private int x, y, nbr;
 

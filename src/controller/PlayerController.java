@@ -6,11 +6,20 @@ import modele.Directions;
 import modele.Player;
 import view.View;
 
+/**
+ * 
+ * @author 
+ *
+ */
 public class PlayerController implements CharacterController, EventHandler<KeyEvent> {
 
 	private Player player;
 	private View view;
 
+	/**
+	 * 
+	 * @param view
+	 */
 	protected PlayerController(View view) {
 		player = new Player();
 		this.view = view;
@@ -28,6 +37,10 @@ public class PlayerController implements CharacterController, EventHandler<KeyEv
 
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Player getPlayer() {
 		return player;
 	}

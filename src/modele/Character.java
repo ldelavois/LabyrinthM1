@@ -2,24 +2,41 @@ package modele;
 
 import controller.Controller;
 
+/**
+ * 
+ * @author 
+ *
+ */
 public abstract class Character implements ICharacter {
 
 	protected int posX;
 	protected int posY;
 	protected Vertex vertexPos;
 
+	/**
+	 * 
+	 */
 	public int getposX() {
 		return this.vertexPos.getX();
 	}
 
+	/**
+	 * 
+	 */
 	public int getposY() {
 		return this.vertexPos.getY();
 	}
 
+	/**
+	 * 
+	 */
 	public Vertex getVertexPos() {
 		return this.vertexPos;
 	}
 
+	/**
+	 * 
+	 */
 	public void setPosition(Labyrinth lab, int x, int y) {
 
 		this.posX = x;
@@ -27,6 +44,9 @@ public abstract class Character implements ICharacter {
 		this.vertexPos = lab.getGraph().getVertex(x, y);
 	}
 
+	/**
+	 * 
+	 */
 	public void move(Labyrinth lab, Directions dir) {
 		if (!(lab.isWall(vertexPos, dir))) {
 			switch (dir) {
