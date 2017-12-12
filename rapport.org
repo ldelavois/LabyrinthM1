@@ -1,0 +1,104 @@
+#+TITLE: Rapport : Projet Approche Objet 2017
+#+AUTHOR: Matthias, Ludovic, Julien, Andy
+
+#+OPTIONS: toc:nil
+
+#+STARTUP: entitiespretty
+
+* Sur ce fichier
+
+Cette partie sera supprimée avant le rendu du rapport.
+
+Ceci est le rapport du projet à compléter selon notre avancement. On
+se limitera à 5-7 pages (c'est vraiment très peu avec ce type de
+fichier).
+
+Ce fichier est un fichier texte écrit avec *emacs* et
+*[[http://orgmode.org][org-mode]]*. C'est un langage de markup (comme /Markdown/, /LaTeX/ ou
+/HTML/ par example). Cela permet d'exporter son contenu dans
+différents formats. *Point bonus* : github formate ce type de fichier
+correctement ce qui le rend facilement lisible. Pour ouvrir ce fichier
+il suffit d'un simple éditeur de texte. Mais il est évidemment idéal
+de l'ouvrir avec *emacs*. Pour exporter au format /pdf/ par exemple,
+sous emacs il faut taper la séquence suivante :
+#+BEGIN_EXAMPLE
+Ctrl-C Ctrl-E l p
+#+END_EXAMPLE
+Cela créé un fichier à l'allure professionnelle et structurée. Si vous
+avez du mal avec la syntaxe envoyez ce que vous voulez insérer dans le
+rapport dans un autre format (texte pur, odt, pdf, sur le google
+drive...) et je me débrouillerai pour l'insérer. Il manque
+certainement des parties. Les parties notées =TODO= sont à écrire ou
+compléter.
+
+* Introduction
+
+Le développement de notre projet s'est effectué au moyen du logiciel
+de gestion de versions /[[https://git-scm.com/][git]]/ avec un dépot hébergé sur
+[[https://github.com/ldelavois/LabyrinthM1][github]].
+
+Ce projet consistait en la réalisation d'un jeu de plateau type
+PacMan. Pour cela nous avons formé un groupe de 4 étudiants de M1
+informatique. Nous avons utilisé la bibliothèque java [[http://jgrapht.org][jgrapht]] pour ce
+qui est de l'implémentation de la structure de données qui accueillera
+notre plateau de jeu. L'intérêt de ce projet réside principalement
+dans la mise en oeuvre des patrons de conceptions et principe de
+programmation objet vu en cours. La partie implémentation des
+algorithmes n'est pas le sujet principal de ce projet.
+
+** Contraintes
+
+Pour ce projet, nous devions respecter quelques contraintes :
+
+- le projet doit respecter l'architecture *MVC*
+- être documenté par un dossier PDF de quelques pages (ce fichier),
+- être documenté sous la forme d'un hypertexte produit par la /javadoc/,
+- appliquer les /Design Patterns/ utils,
+- appliquer les tests unitaires
+
+* TODO Répartition du travail
+* TODO La structure de données
+** TODO La bibliothèque jgrapht
+* Javadoc
+
+Nous avons documenté toutes nos classes, méthodes et variables
+publiques avec l'outil /javadoc/. Cela nous permet de générer une
+documentation structurer de notre projet en /html/. Cela permet
+également d'avoir la documentation directement dans
+l'éditeur. *Eclipse*, *NetBeans* et *IntelliJ IDEA* prennent en charge la
+/javdoc/ par défaut par exemple, mais certains modes pour l'éditeur
+*Emacs* ou plugins *Vim* permettent de naviguer dans la javadoc
+efficacement.
+
+* TODO Tests unitaires
+
+On va créer des tests unitaires pour le graphe seulement (classes
+Graph, Vertex et Edge). On verra si on a le temps pour plus après mais
+je ne suis pas sur que ce soit nécessaire.
+
+* TODO Points à améliorer
+* TODO Conclusion
+
+Ce projet nous a permit d'appliquer les concepts vu en
+cours. L'architecture du projet en *MVC* était l'une principale
+difficulté de ce projet. Nous avons tenté d'appliquer le plus
+fidèlement possible les principe de cette d'architecture.
+
+Nous avons rencontré plusieurs difficultés dans la réalisation de ce
+projet. Premièrement, chacun d'entre nous était engagé dans des
+projets différents sur lequel nous avons passé du temps. Nous avons
+donc pris du retard au départ du projet. De plus, le chevauchement de
+ce projet avec la période d'examens n'a pas rendu la terminaison du
+projet très aisée.
+
+Nous avons également rencontré un problème d'implémentation
+algorithmique au milieu du développement. Nous avons du revoir
+l'implémentation de certaines fonctions de notre structure de
+données. Heureusement, le respect du paradigme /MVC/ nous a permis de
+trouver la localisation du bug rapidement. Sa résolution a, quant à
+elle, pris plus de temps.
+
+Enfin, ce projet nous à permit de développer nos aptitudes à réaliser
+un projet en groupe. L'organisation n'a pas été des plus
+simple. L'organisation d'un groupe de 4 personne est compliqué pour un
+projet comme celui-ci.
