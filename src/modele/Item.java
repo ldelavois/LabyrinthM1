@@ -1,12 +1,6 @@
 package modele;
 
-public class Item implements IItem, Collidable {
-
-	@Override
-	public void setPosition(int x, int y) {
-		// TODO Auto-generated method stub
-
-	}
+public class Item extends Entity implements IItem {
 
 	@Override
 	public boolean onPlayer(Player player) {
@@ -19,5 +13,4 @@ public class Item implements IItem, Collidable {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }
