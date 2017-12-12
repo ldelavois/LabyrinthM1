@@ -1,13 +1,11 @@
 package modele;
 
-import controller.Controller;
-
 /**
  * 
  * @author 
  *
  */
-public abstract class Character implements ICharacter {
+public abstract class Character implements ICharacter, Collidable {
 
 	protected int posX;
 	protected int posY;
@@ -78,5 +76,9 @@ public abstract class Character implements ICharacter {
 		} else
 			System.out.println("Wall");
 	}
-
+	
+	// TODO Implémenter les collisions ici
+	public boolean collision(Collidable c) {
+		return false;
+	}
 }
