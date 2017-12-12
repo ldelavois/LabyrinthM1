@@ -4,11 +4,16 @@ import org.jgrapht.graph.DefaultEdge;
 
 /**
  * 
- * @author 
+ * @author Ludovic, Julien, Andy, Matthias
  *
  */
 @SuppressWarnings("serial")
 public class Edge extends DefaultEdge implements Comparable<Edge> {
+	/**
+	 * 
+	 * @author Ludovic, Julien, Andy, Matthias
+	 *
+	 */
 	public enum DoorType {
 		OPENED, CLOSED, NONE
 	}
@@ -20,6 +25,7 @@ public class Edge extends DefaultEdge implements Comparable<Edge> {
 	private DoorType doorType;
 
 	/**
+	 * Constructeur de la classe.
 	 */
 	public Edge() {
 		super();
@@ -37,7 +43,7 @@ public class Edge extends DefaultEdge implements Comparable<Edge> {
 
 	/**
 	 * 
-	 * @return
+	 * @return Le sommet de départ.
 	 */
 	public Vertex source() {
 		return (Vertex) this.getSource();
@@ -45,7 +51,7 @@ public class Edge extends DefaultEdge implements Comparable<Edge> {
 
 	/**
 	 * 
-	 * @return
+	 * @return Le sommet cible.
 	 */
 	public Vertex target() {
 		return (Vertex) this.getTarget();
@@ -59,15 +65,15 @@ public class Edge extends DefaultEdge implements Comparable<Edge> {
 
 	/**
 	 * 
-	 * @return
+	 * @return Le type de porte.
 	 */
 	public DoorType getDoorType() {
 		return doorType;
 	}
 
 	/**
-	 * 
-	 * @param doorType
+	 * Modifier (ou initialiser) le type de porte.
+	 * @param doorType Le type de porte.
 	 */
 	private void setDoorType(DoorType doorType) {
 		this.doorType = doorType;

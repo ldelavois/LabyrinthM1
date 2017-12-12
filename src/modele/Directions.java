@@ -2,7 +2,7 @@ package modele;
 
 /**
  * 
- * @author 
+ * @author Ludovic, Julien, Andy, Matthias
  *
  */
 public enum Directions {

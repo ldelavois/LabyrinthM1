@@ -2,7 +2,7 @@ package modele;
 
 /**
  * 
- * @author 
+ * @author Ludovic, Julien, Matthias, Andy
  *
  */
 public class Vertex implements Comparable<Vertex> {
@@ -11,12 +11,9 @@ public class Vertex implements Comparable<Vertex> {
 	/**
 	 * Constructeur de la classe.
 	 * 
-	 * @param x
-	 *            : Position horizontale
-	 * @param y
-	 *            : Position verticale
-	 * @param nbr
-	 *            : Identifiant du Vertex
+	 * @param x Position horizontale
+	 * @param y Position verticale
+	 * @param nbr Identifiant du Vertex
 	 */
 	public Vertex(int x, int y, int nbr) {
 		super();
@@ -44,9 +41,8 @@ public class Vertex implements Comparable<Vertex> {
 	/**
 	 * Méthode qui permet de savoir si deux Vertex sont voisins
 	 * 
-	 * @param o
-	 *            : Vertex pour lequel on veut savoir si il est notre voisin
-	 * @return true si les Vertex sont voisins, false sinon
+	 * @param o Vertex pour lequel on veut savoir si il est notre voisin
+	 * @return True si les Vertex sont voisins, false sinon
 	 */
 	public boolean areNeighbors(Vertex o) {
 		int dx = Math.abs(x - o.x);
@@ -86,9 +82,8 @@ public class Vertex implements Comparable<Vertex> {
 	 * Fonction qui permet de savoir si on se trouve dans le Graph en allant dans la
 	 * direction {@code dir} à partir du Vertex courant.
 	 * 
-	 * @param dir
-	 *            : La direction
-	 * @return vrai si on se trouve dans les limites du Graph, faux sinon.
+	 * @param dir La direction
+	 * @return Vrai si on se trouve dans les limites du Graph, faux sinon.
 	 */
 	public boolean inBorders(Directions dir) {
 		boolean verif = false;

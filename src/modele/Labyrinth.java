@@ -7,7 +7,7 @@ import java.util.Vector;
 
 /**
  * 
- * @author
+ * @author Ludovic, Julien, Matthias, Andy
  *
  */
 public class Labyrinth {
@@ -17,7 +17,7 @@ public class Labyrinth {
 	private static Labyrinth lab;
 
 	/**
-	 * 
+	 * Constructeur du labyrinth. Génère un chemin aléatoire (via {@link Graph}).
 	 */
 	public Labyrinth() {
 		graph = new Graph();
@@ -27,10 +27,6 @@ public class Labyrinth {
 		buildRandomPath(v);
 	}
 
-	/**
-	 * 
-	 * @param vertex
-	 */
 	private void buildRandomPath(Vertex vertex) {
 		Vector<Directions> v = new Vector<Directions>();
 		for (int i = 0; i < 4; i++)
@@ -77,21 +73,12 @@ public class Labyrinth {
 
 	/**
 	 * 
-	 * @return
+	 * @return Le graph servant de base pour notre labyrinthe.
 	 */
 	public Graph getGraph() {
 		return graph;
 	}
-
-	public void setGraph(Graph graph) {
-		this.graph = graph;
-	}
-
-	/**
-	 * 
-	 * @param source
-	 * @param target
-	 */
+	
 	private void calculateManhattanDistance(Vertex source, Vertex target) {
 		Queue<Vertex> fifo = new ArrayDeque<Vertex>();
 		target.setNbr(1);
@@ -112,9 +99,9 @@ public class Labyrinth {
 	}
 
 	/**
-	 * 
-	 * @param source
-	 * @param target
+	 * Lance l'aglorithme de Manhattan. Celà permet de chercher le chemin entre deux sommets dans un labyrinthe.
+	 * @param source Le sommet de départ.
+	 * @param target Le sommet cible.
 	 */
 	public void launchManhattan(Vertex source, Vertex target) {
 		for (Vertex vertex : graph.vertexSet())
@@ -123,10 +110,10 @@ public class Labyrinth {
 	}
 
 	/**
-	 * 
-	 * @param vertex
-	 * @param dir
-	 * @return
+	 * Test si il y a un mur entre 2 sommets
+	 * @param vertex Le sommet de départ
+	 * @param dir Le sommet cible
+	 * @return Vrai si il y a un mur entre les commets (i.e pas d'arrête), faux sinon
 	 */
 	public boolean isWall(Vertex vertex, Directions dir) {
 		Edge edge = null;

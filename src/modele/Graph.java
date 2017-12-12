@@ -7,7 +7,7 @@ import org.jgrapht.graph.SimpleGraph;
 
 /**
  * 
- * @author 
+ * @author Ludovic, Julien, Andy, Matthias
  *
  */
 @SuppressWarnings("serial")
@@ -32,9 +32,8 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	/**
 	 * Fonction qui indique la présence d'un Vertex dans un Graph.
 	 * 
-	 * @param vertex
-	 *            : le vertex que l'on cherche
-	 * @return true si le vertex se trouve dans le graph, false sinon
+	 * @param vertex Le vertex que l'on cherche
+	 * @return Vrai si le sommet se trouve dans le graph, faux sinon
 	 */
 	public boolean contains(Vertex vertex) {
 		List<Vertex> vertices = new ArrayList<Vertex>(this.vertexSet());
@@ -44,11 +43,9 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	/**
 	 * Fonction qui permet de savoir si un Vertex existe dans une direction donnée.
 	 * 
-	 * @param vertex
-	 *            Vertex d'origine
-	 * @param dir
-	 *            Direction dans laquel on cherche le Vertex
-	 * @return false si le Vertex exist, true sinon
+	 * @param vertex Vertex d'origine
+	 * @param dir Direction dans laquel on cherche le Vertex
+	 * @return Faux si le Vertex existe, vrai sinon
 	 */
 	public boolean doesntExist(Vertex vertex, Directions dir) {
 		Vertex tmp = null;
@@ -72,10 +69,10 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 
 	/**	
-	 * 
-	 * @param origin
-	 * @param dir
-	 * @return
+	 * Permet de récupérer une arrête entre deux sommets en utilisant la direction.
+	 * @param origin Le sommet de départ.
+	 * @param dir La direction.
+	 * @return L'arrête entre le sommet de départ et le premier sommet qui se trouve dans la direction {@value dir}.
 	 */
 	//Fonctionne pas
 	public Edge getEdge(Vertex origin, Directions dir) {
@@ -86,10 +83,10 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 	
 	/**
-	 * 
-	 * @param v
-	 * @param dir
-	 * @return
+	 * Récupère un sommet en fonction de la direction.
+	 * @param v Le sommet de départ.
+	 * @param dir La direction
+	 * @return Le sommet le plus proche de {@value v} dans la direction {@value d}.
 	 */
 	public Vertex getVertexByDir(Vertex v, Directions dir) {
 		Vertex res = null;
@@ -127,12 +124,11 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 		return res;
 	}
 
-	// retourne le vertex dans le graph équivalent
 	/**
-	 * 
-	 * @param x
-	 * @param y
-	 * @return
+	 * Retourne le vertex dans le graph équivalent
+	 * @param x La position en x. 
+	 * @param y La position en y.
+	 * @return Le sommet à la position ({@value x}, {@value y}).
 	 */
 	public Vertex getVertex(int x, int y) {
 		for (Vertex v : vertexSet())

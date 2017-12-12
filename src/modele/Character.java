@@ -2,7 +2,7 @@ package modele;
 
 /**
  * 
- * @author 
+ * @author Ludovic, Julien, Andy, Matthias
  *
  */
 public abstract class Character extends Entity implements ICharacter {
@@ -37,10 +37,5 @@ public abstract class Character extends Entity implements ICharacter {
 			}
 		} else
 			System.out.println("Wall");
-	}
-	
-	// TODO Implémenter les collisions ici
-	public boolean collision(Collidable c) {
-		return false;
 	}
 }
