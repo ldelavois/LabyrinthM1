@@ -7,10 +7,4 @@ public class Item extends Entity implements IItem {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@Override
-	public boolean collision(Collidable c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 }

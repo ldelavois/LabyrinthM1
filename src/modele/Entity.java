@@ -38,4 +38,8 @@ public abstract class Entity implements Collidable {
 		this.posY = y;
 		this.vertexPos = lab.getGraph().getVertex(x, y);
 	}
+	
+	public boolean collision(Collidable c) {
+		return ((Entity) c).getposX() == posX && ((Entity) c).getposY() == posY;
+	}
 }
