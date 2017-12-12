@@ -82,7 +82,7 @@ public class PlayerController implements CharacterController, EventHandler<KeyEv
 			break;
 
 		}
-		Controller.getInstance().getEnnemyController().testennemy();
+		//Controller.getInstance().getEnnemyController().testennemy();
 	}
 
 }

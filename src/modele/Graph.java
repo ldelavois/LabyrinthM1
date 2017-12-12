@@ -77,6 +77,7 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	 * @param dir
 	 * @return
 	 */
+	//Fonctionne pas
 	public Edge getEdge(Vertex origin, Directions dir) {
 		Vertex target = null;
 		if (!doesntExist(origin, dir))

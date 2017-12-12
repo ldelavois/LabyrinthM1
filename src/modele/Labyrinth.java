@@ -7,7 +7,7 @@ import java.util.Vector;
 
 /**
  * 
- * @author 
+ * @author
  *
  */
 public class Labyrinth {
@@ -129,7 +129,22 @@ public class Labyrinth {
 	 * @return
 	 */
 	public boolean isWall(Vertex vertex, Directions dir) {
-		Edge edge = graph.getEdge(vertex, dir);
+		Edge edge = null;
+		switch (dir) {
+		case NORTH:
+			edge = graph.getEdge(vertex, graph.getVertex(vertex.getX(), vertex.getY() - 1));
+			break;
+		case SOUTH:
+			edge = graph.getEdge(vertex, graph.getVertex(vertex.getX(), vertex.getY() + 1));
+			break;
+		case WEST:
+			edge = graph.getEdge(vertex, graph.getVertex(vertex.getX() - 1, vertex.getY()));
+			break;
+		case EAST:
+			edge = graph.getEdge(vertex, graph.getVertex(vertex.getX() + 1, vertex.getY()));
+			break;
+
+		}
 		return (edge == null);
 	}
 
