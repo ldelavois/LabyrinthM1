@@ -2,23 +2,16 @@ package view;
 
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import modele.Edge;
 import modele.Graph;
 import modele.Labyrinth;
 import modele.Vertex;
-import controller.Controller;
-import controller.LabyrinthController;
 import controller.PlayerController;
-import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 
 /**
  * 

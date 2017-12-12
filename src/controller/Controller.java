@@ -1,9 +1,5 @@
 package controller;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.TouchEvent;
 import javafx.stage.Stage;
 import view.*;
 import modele.*;

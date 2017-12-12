@@ -14,7 +14,6 @@ public class Labyrinth {
 
 	private Random rand;
 	private Graph graph;
-	private static Labyrinth lab;
 
 	/**
 	 * Constructeur du labyrinth. Génère un chemin aléatoire (via {@link Graph}).
