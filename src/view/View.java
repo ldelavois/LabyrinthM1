@@ -15,7 +15,7 @@ import javafx.scene.layout.Pane;
 
 /**
  * 
- * @author 
+ * @author Ludovic, Julien, Andy, Matthias
  *
  */
 public class View {
@@ -131,8 +131,8 @@ public class View {
 	}
 
 	/**
-	 * 
-	 * @param c
+	 * Modifie la position du joueur.
+	 * @param c La nouvelle position
 	 */
 	public void updatePlayerPosition(Vertex c) {
 		// TODO Ici on dessine les personnages (Vertex à remplacer par Character)
@@ -142,8 +142,8 @@ public class View {
 	}
 
 	/**
-	 * 
-	 * @param c
+	 * Met à jour la position d'un ennemi.
+	 * @param c La nouvelle position
 	 */
 	public void updateEnnemyPosition(Vertex c) {
 		// TODO Ici on dessine les ennemies (Vertex à remplacer par Character)
