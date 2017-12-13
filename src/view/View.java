@@ -24,11 +24,11 @@ public class View {
 	static final int WALL = 2;
 	static final int CELL = 9;
 	/**
-	 * 
+	 * Couleur des murs
 	 */
 	public static final Paint WALL_COLOR = Color.BURLYWOOD;
 	/**
-	 * 
+	 * Couleur de fond de la scene
 	 */
 	public static final Paint SCENE_COLOR = Color.WHITE;
 	private Scene scene;
@@ -39,9 +39,9 @@ public class View {
 	ImageView ennemy = new ImageView(imageEnnemy);
 
 	/**
-	 * 
-	 * @param nbrX
-	 * @param nbrY
+	 * Constructeur de la vue. Créé la fenêtre et le plateau de jeu.
+	 * @param nbrX Taille en x.
+	 * @param nbrY Taille en y.
 	 */
 	public View(int nbrX, int nbrY) {
 		scene = new Scene(pane, ((WALL + CELL) * nbrX + WALL) * SPAN, ((WALL + CELL) * nbrY + WALL) * SPAN);
@@ -75,12 +75,8 @@ public class View {
 			}
 		}
 	}
-
-	/**
-	 * 
-	 * @param g
-	 */
-	public void drawGraph(Graph g) {
+	
+	private void drawGraph(Graph g) {
 		Edge e;
 		for (int x = 0; x < Graph.WIDTH; x++) {
 			for (int y = 0; y < Graph.HEIGHT; y++) {
@@ -113,15 +109,7 @@ public class View {
 		}
 	}
 
-	/**
-	 * 
-	 * @param xs
-	 * @param ys
-	 * @param xt
-	 * @param yt
-	 * @param color
-	 */
-	public void drawWall(int xs, int ys, int xt, int yt, Paint color) {
+	private void drawWall(int xs, int ys, int xt, int yt, Paint color) {
 		int x = 0, y = 0, xspan = 0, yspan = 0;
 		if (ys == yt) {
 			x = ((WALL + CELL) + (WALL + CELL) * ((int) (xs + xt) / 2)) * SPAN;
@@ -165,9 +153,9 @@ public class View {
 	}
 
 	/**
-	 * 
-	 * @param primaryStage
-	 * @param lab
+	 * Démare le jeu en déssinant le labyrinthe et en positionnant les personnages et collectibles.
+	 * @param primaryStage L'objet stage de la fenêtre.
+	 * @param lab Le labyrinthe à dessiner.
 	 */
 	public void start(Stage primaryStage, Labyrinth lab) {
 		primaryStage.setScene(scene);
@@ -179,8 +167,8 @@ public class View {
 	}
 
 	/**
-	 * 
-	 * @param eventhandler
+	 * Permet de désigner le traitant à utiliser pour les évennements.
+	 * @param eventhandler Le traitant.
 	 */
 	public void keyPressed(PlayerController eventhandler) {
 		scene.setOnKeyPressed(eventhandler);
