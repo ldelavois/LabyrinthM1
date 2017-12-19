@@ -16,5 +16,12 @@ public class Player extends Character implements ICharacter {
 		setPosition(Controller.getLabyrinth(), (int) (Math.random() * Graph.WIDTH),
 				(int) (Math.random() * Graph.WIDTH));
 	}
+	
+	public void collisionEnnemy(Ennemy ennemy) {
+		if(collision(ennemy)) {
+			System.out.println("PERDU");
+			//...
+		}
+	}
 
 }

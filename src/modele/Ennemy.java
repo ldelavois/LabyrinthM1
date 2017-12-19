@@ -30,14 +30,4 @@ public class Ennemy extends Character implements ICharacter {
 			}
 		}
 	}
-	
-	/**
-	 * Permet de de savoir si l'ennemi est à la même position que le joueur.
-	 * @param player Le joueur.
-	 * @return Vrai si le joueur est à la même position que l'ennemi sinon faux.
-	 */
-	boolean onPlayer(Player player) {
-		return (player.getposX() == this.getposX() && (player.getposY() == this.getposY()));
-	}
-
 }

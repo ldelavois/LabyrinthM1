@@ -1,6 +1,5 @@
 package controller;
 
-import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 import modele.Directions;
 import modele.Player;
@@ -8,10 +7,10 @@ import view.View;
 
 /**
  * 
- * @author 
+ * @author
  *
  */
-public class PlayerController implements CharacterController, EventHandler<KeyEvent> {
+public class PlayerController implements CharacterController {
 
 	private Player player;
 	private View view;
@@ -39,14 +38,17 @@ public class PlayerController implements CharacterController, EventHandler<KeyEv
 
 	/**
 	 * 
-	 * @return
+	 * @return Le joueur
 	 */
 	public Player getPlayer() {
 		return player;
 	}
-
-	@Override
-	public void handle(KeyEvent event) {
+	
+	/**
+	 * Déplace le joueur en fonction des touches directionnelles du clavier
+	 * @param event Evenement d'un appui sur une touches du clavier
+	 */
+	public void movePlayer(KeyEvent event) {
 
 		switch (event.getCode()) {
 
@@ -77,12 +79,12 @@ public class PlayerController implements CharacterController, EventHandler<KeyEv
 			view.updatePlayerPosition(player.getVertexPos());
 			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
-
+		
 		default:
 			break;
 
 		}
-		//Controller.getInstance().getEnnemyController().testennemy();
+		player.collisionEnnemy(Controller.getInstance().getEnnemyController().getEnnemy());
 	}
 
 }

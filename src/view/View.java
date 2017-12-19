@@ -7,6 +7,7 @@ import modele.Edge;
 import modele.Graph;
 import modele.Labyrinth;
 import modele.Vertex;
+import controller.Controller;
 import controller.PlayerController;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -170,7 +171,7 @@ public class View {
 	 * Permet de désigner le traitant à utiliser pour les évennements.
 	 * @param eventhandler Le traitant.
 	 */
-	public void keyPressed(PlayerController eventhandler) {
+	public void keyPressed(Controller eventhandler) {
 		scene.setOnKeyPressed(eventhandler);
 	}
 }

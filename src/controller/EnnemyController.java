@@ -17,7 +17,7 @@ public class EnnemyController implements CharacterController {
 	 * 
 	 * @param view
 	 */
-	public EnnemyController(View view) {
+	protected EnnemyController(View view) {
 		ennemy = new Ennemy();
 		this.view=view;
 		view.updateEnnemyPosition(ennemy.getVertexPos());
@@ -35,10 +35,14 @@ public class EnnemyController implements CharacterController {
 
 	}
 	
+	public Ennemy getEnnemy() {
+		return ennemy;
+	}
+	
 	/**	
 	 * 
 	 */
-	public void testennemy() {
+	public void moveEnnemy() {
 		Controller.getLabyrinth().launchManhattan(ennemy.getVertexPos(), Controller.getInstance().getPlayerController().getPlayer().getVertexPos());
 		System.out.println("Enemies");
 		ennemy.move(Controller.getLabyrinth());
