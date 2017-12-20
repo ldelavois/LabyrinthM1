@@ -55,18 +55,55 @@ Pour ce projet, nous devions respecter quelques contraintes :
 - être documenté sous la forme d'un hypertexte produit par la /javadoc/,
 - appliquer les /Design Patterns/ utils,
 - appliquer les tests unitaires
+* Répartition du travail
 
-* TODO Répartition du travail
+En début de projet, nous nous sommes répartit les tâches de la façon
+suivante :
+
+- implémentation de l'algorithme de Manhattan : Andy
+- implémentation du graph et du labyrinthe : Matthias
+- implémentation de la vue : Ludovic
+- implémentation du joueur : Julien
+
+Le problème avec cette répartition c'est que nous avions certaines
+tâches qui dépendaient de la finition d'autres (par exemple, le
+labyrinthe devait être fini pour l'algo de Manhattan). Au final nous
+avons terminé tous ensemble les parties cruciales en TD avant de se
+lancer dans nos tâches. Nous nous sommes rendu compte qu'il fallait
+avoir un modèle solide pour pouvoir implémenter la vue. Le labyrinthe
+n'a pu être affiché qu'après le troisième TD avec le retard que nous
+avions pris sur l'implémentation du modèle.
+
+Julien s'est occupé de l'implémention des controllers (1 seul au
+début qui à été séparé en plusieurs).
+
+Ludovic (création de la fenêtre et affichage du labyrinthe) et
+Matthias (affichage et mise à jour de la position des joueurs) ont
+implémenté la vue.
+
+Matthias s'est occupé de la rédaction du rapport ainsi que de la
+javadoc (pour les fonctions non documentées).
+
+Andy s'est occupé de l'implémentation des tests unitaires des classes
+Graph, Vertex et Edge.
+
 * TODO La structure de données
 ** TODO La bibliothèque jgrapht
+* Fenêtre de jeu
+
+Pour l'affichage de notre jeu, nous utilisons la bibliothèque JavaFx
+qui s'occupe de l'affichage. Le répertoire =view= de notre projet
+permet de créer la fenêtre de jeu et placer les éléments (labyrinthe,
+personnages...) dans celle-ci.
+
 * Javadoc
 
 Nous avons documenté toutes nos classes, méthodes et variables
 publiques avec l'outil /javadoc/. Cela nous permet de générer une
-documentation structurer de notre projet en /html/. Cela permet
-également d'avoir la documentation directement dans
-l'éditeur. *Eclipse*, *NetBeans* et *IntelliJ IDEA* prennent en charge la
-/javdoc/ par défaut par exemple, mais certains modes pour l'éditeur
+documentation structurer de notre projet en /html/. Un autre avantage
+est la possibilité d'avoir la documentation directement dans
+l'éditeur. *Eclipse*, *NetBeans* et *IntelliJ IDEA* prennent en charge
+la /javdoc/ par défaut par exemple, mais certains modes pour l'éditeur
 *Emacs* ou plugins *Vim* permettent de naviguer dans la javadoc
 efficacement.
 
@@ -77,9 +114,9 @@ Graph, Vertex et Edge). On verra si on a le temps pour plus après mais
 je ne suis pas sur que ce soit nécessaire.
 
 * TODO Points à améliorer
-* TODO Conclusion
+* Conclusion
 
-Ce projet nous a permit d'appliquer les concepts vu en
+Ce projet nous a permis d'appliquer les concepts vu en
 cours. L'architecture du projet en *MVC* était l'une principale
 difficulté de ce projet. Nous avons tenté d'appliquer le plus
 fidèlement possible les principe de cette d'architecture.
