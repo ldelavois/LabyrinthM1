@@ -59,7 +59,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	 * 
 	 * @return Le controller de l'objet player
 	 */
-	public PlayerController getPlayerController() {
+	protected PlayerController getPlayerController() {
 		return playerController;
 	}
 
@@ -67,20 +67,26 @@ public class Controller implements EventHandler<KeyEvent> {
 	 * 
 	 * @return Le controller de l'objet ennemy
 	 */
-	public EnnemyController getEnnemyController() {
+	protected EnnemyController getEnnemyController() {
 		return ennemyController;
 	}
 
-	public void gameOver() {
+	protected void gameOver() {
 		if (playerController.getPlayer().collision(Controller.getInstance().getEnnemyController().getEnnemy())) {
 			System.out.println("PERDU");
 			// ...
 		}
 	}
 
+	protected void victory() {
+		if(playerController.getPlayer().collision(/*changer avec la porte*/Controller.getInstance().getEnnemyController().getEnnemy())) {
+			System.out.println("GAGNE");
+		}
+	}
 	@Override
 	public void handle(KeyEvent event) {
 		getPlayerController().movePlayer(event);
 		gameOver();
+		victory();
 	}
 }

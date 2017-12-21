@@ -10,7 +10,7 @@ import view.View;
  * @author
  *
  */
-public class PlayerController implements CharacterController {
+public class PlayerController {
 
 	private Player player;
 	private View view;
@@ -25,17 +25,6 @@ public class PlayerController implements CharacterController {
 		view.updatePlayerPosition(player.getVertexPos());
 	}
 
-	@Override
-	public void updatePostion() {
-
-	}
-
-	@Override
-	public void spawn() {
-		// TODO Auto-generated method stub
-
-	}
-
 	/**
 	 * 
 	 * @return Le joueur
@@ -43,10 +32,12 @@ public class PlayerController implements CharacterController {
 	public Player getPlayer() {
 		return player;
 	}
-	
+
 	/**
 	 * D��place le joueur en fonction des touches directionnelles du clavier
-	 * @param event Evenement d'un appui sur une touches du clavier
+	 * 
+	 * @param event
+	 *            Evenement d'un appui sur une touches du clavier
 	 */
 	public void movePlayer(KeyEvent event) {
 
@@ -55,36 +46,32 @@ public class PlayerController implements CharacterController {
 		case UP:
 			System.out.println("\n" + event.getCode());
 			player.move(Controller.getLabyrinth(), Directions.NORTH);
-			view.updatePlayerPosition(player.getVertexPos());
 			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 
 		case DOWN:
 			System.out.println("\n" + event.getCode());
 			player.move(Controller.getLabyrinth(), Directions.SOUTH);
-			view.updatePlayerPosition(player.getVertexPos());
 			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 
 		case LEFT:
 			System.out.println("\n" + event.getCode());
 			player.move(Controller.getLabyrinth(), Directions.WEST);
-			view.updatePlayerPosition(player.getVertexPos());
 			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 
 		case RIGHT:
 			System.out.println("\n" + event.getCode());
 			player.move(Controller.getLabyrinth(), Directions.EAST);
-			view.updatePlayerPosition(player.getVertexPos());
 			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
-		
+
 		default:
 			break;
 
 		}
-		player.collision(Controller.getInstance().getEnnemyController().getEnnemy());
+		view.updatePlayerPosition(player.getVertexPos());
 	}
 
 }

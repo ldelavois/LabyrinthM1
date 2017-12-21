@@ -7,7 +7,7 @@ package modele;
  */
 public abstract class Character extends Entity implements ICharacter {
 
-	public Character (Labyrinth laby) {
+	protected Character (Labyrinth laby) {
 		super (laby);
 	}
 	

@@ -10,7 +10,7 @@ public abstract class Entity implements Collidable {
 	protected int posY;
 	protected Vertex vertexPos;
 	
-	public Entity (Labyrinth laby) {
+	protected Entity (Labyrinth laby) {
 		setPosition(laby, (int) (Math.random() * Graph.WIDTH),
 				(int) (Math.random() * Graph.WIDTH));
 	}

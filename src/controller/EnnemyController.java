@@ -8,7 +8,7 @@ import view.View;
  * @author
  *
  */
-public class EnnemyController extends Thread implements CharacterController {
+public class EnnemyController extends Thread {
 
 	private Ennemy ennemy;
 	private View view;
@@ -23,26 +23,14 @@ public class EnnemyController extends Thread implements CharacterController {
 		view.updateEnnemyPosition(ennemy.getVertexPos());
 	}
 
-	@Override
-	public void updatePostion() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void spawn() {
-		// TODO Auto-generated method stub
-
-	}
-
-	public Ennemy getEnnemy() {
+	protected Ennemy getEnnemy() {
 		return ennemy;
 	}
 
 	/**	
 	 * 
 	 */
-	public void moveEnnemy() {
+	protected void moveEnnemy() {
 		Controller.getLabyrinth().launchManhattan(ennemy.getVertexPos(),
 				Controller.getInstance().getPlayerController().getPlayer().getVertexPos());
 		System.out.println("\nEnemies");
