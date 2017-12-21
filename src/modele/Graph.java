@@ -22,15 +22,15 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	public static final int HEIGHT = 16;
 
 	/**
-	 * Constructeur de la classe. Cr���� un Graph et lui donne la classe d'arr��te
-	 * associ��e.
+	 * Constructeur de la classe. Créé un Graph et lui donne la classe d'arrête
+	 * associée.
 	 */
 	public Graph() {
 		super(Edge.class);
 	}
 
 	/**
-	 * Fonction qui indique la pr��sence d'un Vertex dans un Graph.
+	 * Fonction qui indique la présence d'un Vertex dans un Graph.
 	 * 
 	 * @param vertex Le vertex que l'on cherche
 	 * @return Vrai si le sommet se trouve dans le graph, faux sinon
@@ -41,7 +41,7 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 
 	/**
-	 * Fonction qui permet de savoir si un Vertex existe dans une direction donn��e.
+	 * Fonction qui permet de savoir si un Vertex existe dans une direction donnée.
 	 * 
 	 * @param vertex Vertex d'origine
 	 * @param dir Direction dans laquel on cherche le Vertex
@@ -69,10 +69,10 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 
 	/**	
-	 * Permet de r��cup��rer une arr��te entre deux sommets en utilisant la direction.
-	 * @param origin Le sommet de d��part.
+	 * Permet de récupérer une arrête entre deux sommets en utilisant la direction.
+	 * @param origin Le sommet de départ.
 	 * @param dir La direction.
-	 * @return L'arr��te entre le sommet de d��part et le premier sommet qui se trouve dans la direction {@value dir}.
+	 * @return L'arrête entre le sommet de départ et le premier sommet qui se trouve dans la direction {@value dir}.
 	 */
 	//Fonctionne pas
 	public Edge getEdge(Vertex origin, Directions dir) {
@@ -83,8 +83,8 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 	
 	/**
-	 * R��cup��re un sommet en fonction de la direction.
-	 * @param v Le sommet de d��part.
+	 * Récupère un sommet en fonction de la direction.
+	 * @param v Le sommet de départ.
 	 * @param dir La direction
 	 * @return Le sommet le plus proche de {@value v} dans la direction {@value d}.
 	 */
@@ -103,10 +103,10 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 
 	/**
-	 * Retourne le vertex dans le graph ��quivalent
+	 * Retourne le vertex dans le graph équivalent
 	 * @param x La position en x. 
 	 * @param y La position en y.
-	 * @return Le sommet �� la position ({@value x}, {@value y}).
+	 * @return Le sommet à la position ({@value x}, {@value y}).
 	 */
 	public Vertex getVertex(int x, int y) {
 		for (Vertex v : vertexSet())

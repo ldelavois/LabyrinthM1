@@ -16,6 +16,7 @@ public class Ennemy extends Character {
 
 	/**
 	 * Permet de faire déplacer l'ennemi en fonction de la position du joueur à l'aide l'algorithme de Manhattan.
+	 * Pour cela on a attribué une valeur à chaque sommet que l'ennemi suit par ordre décroissant.
 	 * @param lab Le labyrinthe.
 	 */
 	public void move(Labyrinth lab) {
