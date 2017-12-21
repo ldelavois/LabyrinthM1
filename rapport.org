@@ -1,5 +1,5 @@
 #+TITLE: Rapport : Projet Approche Objet 2017
-#+AUTHOR: Matthias, Ludovic, Julien, Andy
+#+AUTHOR: Ludovic DELAVOIS, Julien MASSONNEAU, Amelozara Mahazoasy, Matthias PAULMIER
 
 #+OPTIONS: toc:nil
 
@@ -118,7 +118,7 @@ permet de créer la fenêtre de jeu et placer les éléments (labyrinthe,
 personnages, objets...) dans celle-ci. Comme vu plus tôt, toute la vue est
 gérée par une seule classe, ce n'est pas un problème pour le respect
 du modèle MVC, en revanche ce n'est pas une pratique courante ou
-recommandée pour les projet que l'on veut modulaires. En effet, 
+recommandée pour les projet que l'on veut modulaires. En effet,
 chaque classe ne doit pas pas dépasser les 300 lignes.Au delà,
 on considère qu'il est possible de diviser la classe.
 
@@ -165,5 +165,5 @@ de 4 personnes est compliquée pour un projet comme celui-ci, de plus
 nous n'étions pas un groupe déjà formé avant ce projet. Le projet
 n'est pas terminé en tant que jeu mais la réalisation d'une
 application relativement conséquente orientée objet et respectant le
-modèle *MVC* était le but premier de celui-ci. Enfin, certains membres 
+modèle *MVC* était le but premier de celui-ci. Enfin, certains membres
 du groupe ont dû apprendre à utiliser GitHub (pour le travail collaboratif) qu'ils n'ont pas utilisé auparavant.
