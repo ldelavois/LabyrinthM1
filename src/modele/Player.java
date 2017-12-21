@@ -1,7 +1,5 @@
 package modele;
 
-import controller.Controller;
-
 /**
  * 
  * @author Ludovic, Julien, Matthias, Andy
@@ -10,18 +8,11 @@ import controller.Controller;
 public class Player extends Character implements ICharacter {
 
 	/**
-	 * Contructeur du joueur, initialise sa position de façon aléatoire
+	 * Contructeur du joueur, initialise sa position de fa��on al��atoire
 	 */
-	public Player() {
-		setPosition(Controller.getLabyrinth(), (int) (Math.random() * Graph.WIDTH),
+	public Player(Labyrinth laby) {
+		setPosition(laby, (int) (Math.random() * Graph.WIDTH),
 				(int) (Math.random() * Graph.WIDTH));
-	}
-	
-	public void collisionEnnemy(Ennemy ennemy) {
-		if(collision(ennemy)) {
-			System.out.println("PERDU");
-			//...
-		}
 	}
 
 }

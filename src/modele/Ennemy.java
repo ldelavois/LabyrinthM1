@@ -10,7 +10,7 @@ import controller.Controller;
 public class Ennemy extends Character implements ICharacter {
 
 	/**
-	 * Contructeur de l'ennemi qui initialise sa position de façon aléatoire
+	 * Contructeur de l'ennemi qui initialise sa position de fa��on al��atoire
 	 */
 	public Ennemy() {
 		setPosition(Controller.getLabyrinth(), (int) (Math.random() * Graph.WIDTH),
@@ -18,7 +18,7 @@ public class Ennemy extends Character implements ICharacter {
 	}
 
 	/**
-	 * Permet de faire déplacer l'ennemi en fonction de la position du joueur à l'aide l'algorithme de Manhattan.
+	 * Permet de faire d��placer l'ennemi en fonction de la position du joueur �� l'aide l'algorithme de Manhattan.
 	 * @param lab Le labyrinthe.
 	 */
 	public void move(Labyrinth lab) {
@@ -27,6 +27,7 @@ public class Ennemy extends Character implements ICharacter {
 			Vertex next = lab.getGraph().getVertexByDir(vertexPos, dir);
 			if (lab.getGraph().containsEdge(vertexPos, next) && (next.getNbr() == vertexPos.getNbr() - 1)) {
 				this.move(lab, dir);
+				return;
 			}
 		}
 	}

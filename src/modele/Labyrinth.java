@@ -24,6 +24,7 @@ public class Labyrinth {
 		Vertex v = new Vertex(0, 0, 0);
 		graph.addVertex(v);
 		buildRandomPath(v);
+		openRandomPath(50);
 	}
 
 	private void buildRandomPath(Vertex vertex) {
@@ -70,6 +71,19 @@ public class Labyrinth {
 		}
 	}
 
+	private void openRandomPath(int nb) {
+		for (int i = 0; i < nb; i++) {
+			Vertex vertex = graph.getVertex((int) (Math.random() * Graph.WIDTH), (int) (Math.random() * Graph.HEIGHT));
+			Directions dir = Directions.values()[(int) (Math.random() * 4)];
+			if (isWall(vertex, dir)) {
+				Vertex vertex2 = graph.getVertexByDir(vertex, dir);
+				if (vertex2 != null) {
+					graph.addEdge(vertex, vertex2);
+				}
+			}
+		}
+	}
+
 	/**
 	 * 
 	 * @return Le graph servant de base pour notre labyrinthe.
@@ -77,7 +91,7 @@ public class Labyrinth {
 	public Graph getGraph() {
 		return graph;
 	}
-	
+
 	private void calculateManhattanDistance(Vertex source, Vertex target) {
 		Queue<Vertex> fifo = new ArrayDeque<Vertex>();
 		target.setNbr(1);
@@ -98,9 +112,13 @@ public class Labyrinth {
 	}
 
 	/**
-	 * Lance l'aglorithme de Manhattan. Cel�� permet de chercher le chemin entre deux sommets dans un labyrinthe.
-	 * @param source Le sommet de d��part.
-	 * @param target Le sommet cible.
+	 * Lance l'aglorithme de Manhattan. Cel�� permet de chercher le chemin entre
+	 * deux sommets dans un labyrinthe.
+	 * 
+	 * @param source
+	 *            Le sommet de d��part.
+	 * @param target
+	 *            Le sommet cible.
 	 */
 	public void launchManhattan(Vertex source, Vertex target) {
 		for (Vertex vertex : graph.vertexSet())
@@ -110,9 +128,13 @@ public class Labyrinth {
 
 	/**
 	 * Test si il y a un mur entre 2 sommets
-	 * @param vertex Le sommet de d��part
-	 * @param dir Le sommet cible
-	 * @return Vrai si il y a un mur entre les commets (i.e pas d'arr��te), faux sinon
+	 * 
+	 * @param vertex
+	 *            Le sommet de d��part
+	 * @param dir
+	 *            Le sommet cible
+	 * @return Vrai si il y a un mur entre les commets (i.e pas d'arr��te), faux
+	 *         sinon
 	 */
 	public boolean isWall(Vertex vertex, Directions dir) {
 		Edge edge = null;

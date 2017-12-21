@@ -20,7 +20,7 @@ public class PlayerController implements CharacterController {
 	 * @param view
 	 */
 	protected PlayerController(View view) {
-		player = new Player();
+		player = new Player(Controller.getLabyrinth());
 		this.view = view;
 		view.updatePlayerPosition(player.getVertexPos());
 	}
@@ -45,7 +45,7 @@ public class PlayerController implements CharacterController {
 	}
 	
 	/**
-	 * Déplace le joueur en fonction des touches directionnelles du clavier
+	 * D��place le joueur en fonction des touches directionnelles du clavier
 	 * @param event Evenement d'un appui sur une touches du clavier
 	 */
 	public void movePlayer(KeyEvent event) {
@@ -84,7 +84,7 @@ public class PlayerController implements CharacterController {
 			break;
 
 		}
-		player.collisionEnnemy(Controller.getInstance().getEnnemyController().getEnnemy());
+		player.collision(Controller.getInstance().getEnnemyController().getEnnemy());
 	}
 
 }
