@@ -5,21 +5,21 @@ import view.View;
 
 /**
  * 
- * @author 
+ * @author
  *
  */
-public class EnnemyController implements CharacterController {
+public class EnnemyController extends Thread implements CharacterController {
 
 	private Ennemy ennemy;
 	private View view;
-	
+
 	/**
 	 * 
 	 * @param view
 	 */
 	protected EnnemyController(View view) {
 		ennemy = new Ennemy(Controller.getLabyrinth());
-		this.view=view;
+		this.view = view;
 		view.updateEnnemyPosition(ennemy.getVertexPos());
 	}
 
@@ -34,20 +34,35 @@ public class EnnemyController implements CharacterController {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	public Ennemy getEnnemy() {
 		return ennemy;
 	}
-	
+
 	/**	
 	 * 
 	 */
 	public void moveEnnemy() {
-		Controller.getLabyrinth().launchManhattan(ennemy.getVertexPos(), Controller.getInstance().getPlayerController().getPlayer().getVertexPos());
-		System.out.println("Enemies");
+		Controller.getLabyrinth().launchManhattan(ennemy.getVertexPos(),
+				Controller.getInstance().getPlayerController().getPlayer().getVertexPos());
+		System.out.println("\nEnemies");
 		ennemy.move(Controller.getLabyrinth());
 		System.out.println("position : " + ennemy.getposX() + " ; " + ennemy.getposY());
 		view.updateEnnemyPosition(ennemy.getVertexPos());
+		Controller.getInstance().gameOver();
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			moveEnnemy();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 }
