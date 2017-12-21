@@ -75,6 +75,6 @@ public class Controller implements EventHandler<KeyEvent> {
 	public void handle(KeyEvent event) {
 		getPlayerController().movePlayer(event);
 		// bug Manhattan
-		// getEnnemyController().moveEnnemy();
+		getEnnemyController().moveEnnemy();
 	}
 }

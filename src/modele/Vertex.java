@@ -39,7 +39,7 @@ public class Vertex implements Comparable<Vertex> {
 	}
 
 	/**
-	 * Méthode qui permet de savoir si deux Vertex sont voisins
+	 * M��thode qui permet de savoir si deux Vertex sont voisins
 	 * 
 	 * @param o Vertex pour lequel on veut savoir si il est notre voisin
 	 * @return True si les Vertex sont voisins, false sinon
@@ -80,7 +80,7 @@ public class Vertex implements Comparable<Vertex> {
 
 	/**
 	 * Fonction qui permet de savoir si on se trouve dans le Graph en allant dans la
-	 * direction {@code dir} à partir du Vertex courant.
+	 * direction {@code dir} �� partir du Vertex courant.
 	 * 
 	 * @param dir La direction
 	 * @return Vrai si on se trouve dans les limites du Graph, faux sinon.

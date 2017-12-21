@@ -22,15 +22,15 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	public static final int HEIGHT = 16;
 
 	/**
-	 * Constructeur de la classe. Créé un Graph et lui donne la classe d'arrête
-	 * associée.
+	 * Constructeur de la classe. Cr���� un Graph et lui donne la classe d'arr��te
+	 * associ��e.
 	 */
 	public Graph() {
 		super(Edge.class);
 	}
 
 	/**
-	 * Fonction qui indique la présence d'un Vertex dans un Graph.
+	 * Fonction qui indique la pr��sence d'un Vertex dans un Graph.
 	 * 
 	 * @param vertex Le vertex que l'on cherche
 	 * @return Vrai si le sommet se trouve dans le graph, faux sinon
@@ -41,7 +41,7 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 
 	/**
-	 * Fonction qui permet de savoir si un Vertex existe dans une direction donnée.
+	 * Fonction qui permet de savoir si un Vertex existe dans une direction donn��e.
 	 * 
 	 * @param vertex Vertex d'origine
 	 * @param dir Direction dans laquel on cherche le Vertex
@@ -69,10 +69,10 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 
 	/**	
-	 * Permet de récupérer une arrête entre deux sommets en utilisant la direction.
-	 * @param origin Le sommet de départ.
+	 * Permet de r��cup��rer une arr��te entre deux sommets en utilisant la direction.
+	 * @param origin Le sommet de d��part.
 	 * @param dir La direction.
-	 * @return L'arrête entre le sommet de départ et le premier sommet qui se trouve dans la direction {@value dir}.
+	 * @return L'arr��te entre le sommet de d��part et le premier sommet qui se trouve dans la direction {@value dir}.
 	 */
 	//Fonctionne pas
 	public Edge getEdge(Vertex origin, Directions dir) {
@@ -83,52 +83,30 @@ public class Graph extends SimpleGraph<Vertex, Edge> {
 	}
 	
 	/**
-	 * Récupère un sommet en fonction de la direction.
-	 * @param v Le sommet de départ.
+	 * R��cup��re un sommet en fonction de la direction.
+	 * @param v Le sommet de d��part.
 	 * @param dir La direction
 	 * @return Le sommet le plus proche de {@value v} dans la direction {@value d}.
 	 */
 	public Vertex getVertexByDir(Vertex v, Directions dir) {
-		Vertex res = null;
-		for (Edge e : this.edgeSet()) {
-			Vertex source = e.source();
-			Vertex target = e.target();
-			Vertex v2 = null;
-			if (v.equals(source)) {
-				v2 = target;
-
-				switch (dir) {
-				case NORTH:
-					if (v.getX() == v2.getX() && v.getY() == v2.getY() - 1) {
-						res = v2;
-					}
-					break;
-				case SOUTH:
-					if (v.getX() == v2.getX() && v.getY() == v2.getY() + 1) {
-						res = v2;
-					}
-					break;
-				case EAST:
-					if (v.getX() == v2.getX() + 1 && v.getY() == v2.getY()) {
-						res = v2;
-					}
-					break;
-				case WEST:
-					if (v.getX() == v2.getX() - 1 && v.getY() == v2.getY()) {
-						res = v2;
-					}
-					break;
-				}
-			}
+		switch (dir) {
+		case NORTH:
+			return getVertex(v.getX(), v.getY() - 1);
+		case SOUTH:
+			return getVertex(v.getX(), v.getY() + 1);
+		case EAST:
+			return getVertex(v.getX() + 1, v.getY());
+		case WEST:
+			return getVertex(v.getX() - 1, v.getY());
 		}
-		return res;
+		return null;
 	}
 
 	/**
-	 * Retourne le vertex dans le graph équivalent
+	 * Retourne le vertex dans le graph ��quivalent
 	 * @param x La position en x. 
 	 * @param y La position en y.
-	 * @return Le sommet à la position ({@value x}, {@value y}).
+	 * @return Le sommet �� la position ({@value x}, {@value y}).
 	 */
 	public Vertex getVertex(int x, int y) {
 		for (Vertex v : vertexSet())

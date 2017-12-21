@@ -16,7 +16,7 @@ public class Labyrinth {
 	private Graph graph;
 
 	/**
-	 * Constructeur du labyrinth. Génère un chemin aléatoire (via {@link Graph}).
+	 * Constructeur du labyrinth. G��n��re un chemin al��atoire (via {@link Graph}).
 	 */
 	public Labyrinth() {
 		graph = new Graph();
@@ -87,7 +87,7 @@ public class Labyrinth {
 			for (Directions dir : Directions.values()) {
 				if (!this.isWall(current, dir)) {
 					Vertex next = graph.getVertexByDir(current, dir);
-					if (next.getNbr() == 0) {
+					if (next != null && next.getNbr() == 0) {
 						next.setNbr(current.getNbr() + 1);
 						if (next != source)
 							fifo.add(next);
@@ -98,8 +98,8 @@ public class Labyrinth {
 	}
 
 	/**
-	 * Lance l'aglorithme de Manhattan. Celà permet de chercher le chemin entre deux sommets dans un labyrinthe.
-	 * @param source Le sommet de départ.
+	 * Lance l'aglorithme de Manhattan. Cel�� permet de chercher le chemin entre deux sommets dans un labyrinthe.
+	 * @param source Le sommet de d��part.
 	 * @param target Le sommet cible.
 	 */
 	public void launchManhattan(Vertex source, Vertex target) {
@@ -110,9 +110,9 @@ public class Labyrinth {
 
 	/**
 	 * Test si il y a un mur entre 2 sommets
-	 * @param vertex Le sommet de départ
+	 * @param vertex Le sommet de d��part
 	 * @param dir Le sommet cible
-	 * @return Vrai si il y a un mur entre les commets (i.e pas d'arrête), faux sinon
+	 * @return Vrai si il y a un mur entre les commets (i.e pas d'arr��te), faux sinon
 	 */
 	public boolean isWall(Vertex vertex, Directions dir) {
 		Edge edge = null;
