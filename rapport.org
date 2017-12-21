@@ -87,8 +87,51 @@ javadoc (pour les fonctions non documentées).
 Andy s'est occupé de l'implémentation des tests unitaires des classes
 Graph, Vertex et Edge.
 
-* TODO La structure de données
-** TODO La bibliothèque jgrapht
+* Organisation du projet
+
+Pour la structure de notre projet, nous avons les diagrammes de
+classes suivants :
+
+#+CAPTION: Diagramme de classes du modèle
+[[./ModelClassDiagram.png]]
+
+#+CAPTION: Diagramme de classes du controlleur
+[[./ControllerClassDiagram.png]]
+
+#+CAPTION: Diagramme de classe de la vue
+[[./ViewClassDiagram.png]]
+
+\clearpage
+
+Comme on peut le voir dans le dernier diagramme, nous avons choisis
+d'incorporer tous les éléments de la vue dans une seule classe. Ce
+n'est pas incorrecte d'un point de vue conception MVC mais ce n'est
+pas le modèle le plus flexible en terme d'évolution. L'idéal aurait
+été de faire une vue pour chaque élément du modèle que l'on souhaite
+afficher (un peu comme ce que l'on a fait pour le controlleur).
+
+Pour générer ces diagrammes de classes nous avons utilisé le plugin
+eclipse ModelGoon UML4Java. Nous avons privilégié cet outil à d'autres
+alternatives qui auraient peut être été plus efficaces (obligé de
+générer le diagramme classe par classe avec celui ci) car c'est un des
+rares qui soit sous licence libre.
+
+* La structure de données
+
+La particularité de ce projet était l'utilisation d'un graph pour
+représenter le labyrinthe. Cela permet entre autres d'appliquer
+l'algorithme de Manhattan pour le déplacement des ennemies par
+exemple. Notre graph contient des sommets de la classe =Vertex= et des
+arrêtes de la classe =Edge= qui sont des paires de sommets avec un
+type de porte afin de savoir si une porte se trouve à cet endroit et
+quel est son statut (ouvert, fermé, absente).
+
+** La bibliothèque jgrapht
+
+Pour l'implémentation du graphe, nous avons utilisé la bibliothèque
+[[http://jgrapht.org/][Jgrapht]] qui nous donnait toutes les primitives nécessaires pour créer,
+modifier et parcourir notre graphe.
+
 * Fenêtre de jeu
 
 Pour l'affichage de notre jeu, nous utilisons la bibliothèque JavaFx
