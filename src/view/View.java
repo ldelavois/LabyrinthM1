@@ -40,7 +40,7 @@ public class View {
 	ImageView ennemy = new ImageView(imageEnnemy);
 
 	/**
-	 * Constructeur de la vue. Créé la fenêtre et le plateau de jeu.
+	 * Constructeur de la vue. Cr���� la fen��tre et le plateau de jeu.
 	 * @param nbrX Taille en x.
 	 * @param nbrY Taille en y.
 	 */
@@ -84,25 +84,15 @@ public class View {
 
 				if (x + 1 < Graph.WIDTH) {
 					e = g.getEdge(g.getVertex(x, y), g.getVertex(x + 1, y));
-					if (e == null || (e.getDoorType() != Edge.DoorType.NONE)) {
+					if (e == null) {
 						drawWall(x, y, x + 1, y, WALL_COLOR);
-						if (e != null && (e.getDoorType() == Edge.DoorType.OPENED)) {
-							drawWall(x, y, x + 1, y, Color.RED);
-						} else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
-							drawWall(x, y, x + 1, y, Color.GREEN);
-						}
 					}
 				}
 
 				if (y + 1 < Graph.HEIGHT) {
 					e = g.getEdge(g.getVertex(x, y), g.getVertex(x, y + 1));
-					if (e == null || (e.getDoorType() != Edge.DoorType.NONE)) {
+					if (e == null) {
 						drawWall(x, y, x, y + 1, WALL_COLOR);
-						if (e != null && (e.getDoorType() == Edge.DoorType.OPENED)) {
-							drawWall(x, y, x, y + 1, Color.GREEN);
-						} else if (e != null && (e.getDoorType() == Edge.DoorType.CLOSED)) {
-							drawWall(x, y, x + 1, y, Color.RED);
-						}
 					}
 
 				}
@@ -136,27 +126,27 @@ public class View {
 	 * @param c La nouvelle position
 	 */
 	public void updatePlayerPosition(Vertex c) {
-		// TODO Ici on dessine les personnages (Vertex à remplacer par Character)
+		// TODO Ici on dessine les personnages (Vertex �� remplacer par Character)
 
 		player.setX((int) ((WALL + c.getX() * (WALL + CELL)) * SPAN));
 		player.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
 	}
 
 	/**
-	 * Met à jour la position d'un ennemi.
+	 * Met �� jour la position d'un ennemi.
 	 * @param c La nouvelle position
 	 */
 	public void updateEnnemyPosition(Vertex c) {
-		// TODO Ici on dessine les ennemies (Vertex à remplacer par Character)
+		// TODO Ici on dessine les ennemies (Vertex �� remplacer par Character)
 
 		ennemy.setX((int) ((WALL + c.getX() * (WALL + CELL)) * SPAN));
 		ennemy.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
 	}
 
 	/**
-	 * Démare le jeu en déssinant le labyrinthe et en positionnant les personnages et collectibles.
-	 * @param primaryStage L'objet stage de la fenêtre.
-	 * @param lab Le labyrinthe à dessiner.
+	 * D��mare le jeu en d��ssinant le labyrinthe et en positionnant les personnages et collectibles.
+	 * @param primaryStage L'objet stage de la fen��tre.
+	 * @param lab Le labyrinthe �� dessiner.
 	 */
 	public void start(Stage primaryStage, Labyrinth lab) {
 		primaryStage.setScene(scene);
@@ -168,7 +158,7 @@ public class View {
 	}
 
 	/**
-	 * Permet de désigner le traitant à utiliser pour les évennements.
+	 * Permet de d��signer le traitant �� utiliser pour les ��vennements.
 	 * @param eventhandler Le traitant.
 	 */
 	public void keyPressed(Controller eventhandler) {
