@@ -38,6 +38,10 @@ public class View {
 	ImageView player = new ImageView(imagePlayer);
 	private Image imageEnnemy = new Image("file:resources/bad.png");
 	ImageView ennemy = new ImageView(imageEnnemy);
+	private Image imageDoor = new Image("file:resources/door_open.png");
+	ImageView door = new ImageView(imageDoor);
+	private Image imageCandy1 = new Image("file:resources/candy-1.png");
+	ImageView candy1= new ImageView(imageCandy1);
 
 	/**
 	 * Constructeur de la vue. Cr���� la fen��tre et le plateau de jeu.
@@ -155,6 +159,8 @@ public class View {
 		drawGraph(lab.getGraph());
 		pane.getChildren().add(player);
 		pane.getChildren().add(ennemy);
+		pane.getChildren().add(door);
+		pane.getChildren().add(candy1);
 	}
 
 	/**
