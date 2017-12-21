@@ -8,7 +8,6 @@ import modele.Graph;
 import modele.Labyrinth;
 import modele.Vertex;
 import controller.Controller;
-import controller.PlayerController;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -130,8 +129,6 @@ public class View {
 	 * @param c La nouvelle position
 	 */
 	public void updatePlayerPosition(Vertex c) {
-		// TODO Ici on dessine les personnages (Vertex �� remplacer par Character)
-
 		player.setX((int) ((WALL + c.getX() * (WALL + CELL)) * SPAN));
 		player.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
 	}
@@ -148,9 +145,9 @@ public class View {
 	}
 
 	/**
-	 * D��mare le jeu en d��ssinant le labyrinthe et en positionnant les personnages et collectibles.
-	 * @param primaryStage L'objet stage de la fen��tre.
-	 * @param lab Le labyrinthe �� dessiner.
+	 * Démare le jeu en dessinant le labyrinthe et en positionnant les personnages et collectibles.
+	 * @param primaryStage L'objet stage de la fenêtre.
+	 * @param lab Le labyrinthe à dessiner.
 	 */
 	public void start(Stage primaryStage, Labyrinth lab) {
 		primaryStage.setScene(scene);
@@ -164,7 +161,7 @@ public class View {
 	}
 
 	/**
-	 * Permet de d��signer le traitant �� utiliser pour les ��vennements.
+	 * Permet de désigner le traitant à utiliser pour les évennements.
 	 * @param eventhandler Le traitant.
 	 */
 	public void keyPressed(Controller eventhandler) {
