@@ -43,7 +43,7 @@ public class View {
 	ImageView candy1= new ImageView(imageCandy1);
 
 	/**
-	 * Constructeur de la vue. Cr���� la fen��tre et le plateau de jeu.
+	 * Constructeur de la vue. Crée la fenêtre et le plateau de jeu.
 	 * @param nbrX Taille en x.
 	 * @param nbrY Taille en y.
 	 */
@@ -129,21 +129,30 @@ public class View {
 	 * @param c La nouvelle position
 	 */
 	public void updatePlayerPosition(Vertex c) {
-		player.setX((int) ((WALL + c.getX() * (WALL + CELL)) * SPAN));
-		player.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
+		placeSprite(player, c);
 	}
 
 	/**
-	 * Met �� jour la position d'un ennemi.
+	 * Met à jour la position d'un ennemi.
 	 * @param c La nouvelle position
 	 */
 	public void updateEnnemyPosition(Vertex c) {
-		// TODO Ici on dessine les ennemies (Vertex �� remplacer par Character)
-
-		ennemy.setX((int) ((WALL + c.getX() * (WALL + CELL)) * SPAN));
-		ennemy.setY((int) ((WALL + c.getY() * (WALL + CELL)) * SPAN));
+		placeSprite (ennemy, c);
+	}
+	
+	/**
+	 * Place la porte
+	 * @param c La nouvelle position
+	 */
+	public void placeDoor (Vertex c) {
+		placeSprite (door, c);
 	}
 
+	private void placeSprite (ImageView i, Vertex v) {
+		i.setX((int) ((WALL + v.getX() * (WALL + CELL)) * SPAN));
+		i.setY((int) ((WALL + v.getY() * (WALL + CELL)) * SPAN));
+	}
+	
 	/**
 	 * Démare le jeu en dessinant le labyrinthe et en positionnant les personnages et collectibles.
 	 * @param primaryStage L'objet stage de la fenêtre.
