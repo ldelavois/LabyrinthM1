@@ -1,9 +1,12 @@
 #+TITLE: Rapport : Projet Approche Objet 2017
-#+AUTHOR: Ludovic DELAVOIS, Julien MASSONNEAU, Amelozara Mahazoasy, Matthias PAULMIER
 
-#+OPTIONS: toc:nil
+#+AUTHOR: L. DELAVOIS, J. MASSONNEAU, A. MAHAZOASY, M. PAULMIER
 
 #+STARTUP: entitiespretty
+
+#+BEGIN_EXPORT latex
+\clearpage
+#+END_EXPORT
 
 * Introduction
 
