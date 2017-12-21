@@ -5,32 +5,6 @@
 
 #+STARTUP: entitiespretty
 
-* Sur ce fichier
-
-Cette partie sera supprimée avant le rendu du rapport.
-
-Ceci est le rapport du projet à compléter selon notre avancement. On
-se limitera à 5-7 pages (c'est vraiment très peu avec ce type de
-fichier).
-
-Ce fichier est un fichier texte écrit avec *emacs* et
-*[[http://orgmode.org][org-mode]]*. C'est un langage de markup (comme /Markdown/, /LaTeX/ ou
-/HTML/ par example). Cela permet d'exporter son contenu dans
-différents formats. *Point bonus* : github formate ce type de fichier
-correctement ce qui le rend facilement lisible. Pour ouvrir ce fichier
-il suffit d'un simple éditeur de texte. Mais il est évidemment idéal
-de l'ouvrir avec *emacs*. Pour exporter au format /pdf/ par exemple,
-sous emacs il faut taper la séquence suivante :
-#+BEGIN_EXAMPLE
-Ctrl-C Ctrl-E l p
-#+END_EXAMPLE
-Cela créé un fichier à l'allure professionnelle et structurée. Si vous
-avez du mal avec la syntaxe envoyez ce que vous voulez insérer dans le
-rapport dans un autre format (texte pur, odt, pdf, sur le google
-drive...) et je me débrouillerai pour l'insérer. Il manque
-certainement des parties. Les parties notées =TODO= sont à écrire ou
-compléter.
-
 * Introduction
 
 Le développement de notre projet s'est effectué au moyen du logiciel
@@ -74,6 +48,8 @@ avoir un modèle solide pour pouvoir implémenter la vue. Le labyrinthe
 n'a pu être affiché qu'après le troisième TD avec le retard que nous
 avions pris sur l'implémentation du modèle.
 
+Ensuite, la répartition du travail s'est effectuée de la manière suivante.
+
 Julien s'est occupé de l'implémention des controllers (1 seul au
 début qui à été séparé en plusieurs).
 
@@ -101,7 +77,9 @@ classes suivants :
 #+CAPTION: Diagramme de classe de la vue
 [[./ViewClassDiagram.png]]
 
+#+BEGIN_EXPORT latex
 \clearpage
+#+END_EXPORT
 
 Comme on peut le voir dans le dernier diagramme, nous avons choisis
 d'incorporer tous les éléments de la vue dans une seule classe. Ce
@@ -134,10 +112,13 @@ modifier et parcourir notre graphe.
 
 * Fenêtre de jeu
 
-Pour l'affichage de notre jeu, nous utilisons la bibliothèque JavaFx
+Pour l'affichage de notre jeu, nous utilisons la bibliothèque JavaFX
 qui s'occupe de l'affichage. Le répertoire =view= de notre projet
 permet de créer la fenêtre de jeu et placer les éléments (labyrinthe,
-personnages...) dans celle-ci.
+personnages...) dans celle-ci. Comme vu plus tôt, toute la vue est
+gérée par une seule classe, ce n'est pas un problème pour le respect
+du modèle MVC, en revanche ce n'est pas une pratique courante ou
+recommandée pour les projet que l'on veut modulaires.
 
 * Javadoc
 
@@ -156,7 +137,6 @@ On va créer des tests unitaires pour le graphe seulement (classes
 Graph, Vertex et Edge). On verra si on a le temps pour plus après mais
 je ne suis pas sur que ce soit nécessaire.
 
-* TODO Points à améliorer
 * Conclusion
 
 Ce projet nous a permis d'appliquer les concepts vu en
@@ -178,7 +158,9 @@ données. Heureusement, le respect du paradigme /MVC/ nous a permis de
 trouver la localisation du bug rapidement. Sa résolution a, quant à
 elle, pris plus de temps.
 
-Enfin, ce projet nous à permit de développer nos aptitudes à réaliser
-un projet en groupe. L'organisation n'a pas été des plus
-simple. L'organisation d'un groupe de 4 personne est compliqué pour un
-projet comme celui-ci.
+L'organisation n'a pas été des plus simple. L'organisation d'un groupe
+de 4 personne est compliqué pour un projet comme celui-ci, de plus
+nous n'étions pas un groupe déjà formé avant ce projet. Le projet
+n'est pas terminé en tant que jeu mais la réalisation d'une
+application relativement conséquente orientée objet et respectant le
+modèle *MVC* était le but premier de celui-ci.
