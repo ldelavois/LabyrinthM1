@@ -1,24 +1,21 @@
 package modele;
 
-import controller.Controller;
-
 /**
  * 
  * @author Ludovic, Julien, Andy, Matthias
  *
  */
-public class Ennemy extends Character implements ICharacter {
+public class Ennemy extends Character {
 
 	/**
-	 * Contructeur de l'ennemi qui initialise sa position de fa��on al��atoire
+	 * Contructeur de l'ennemi qui initialise sa position de façon aléatoire
 	 */
-	public Ennemy() {
-		setPosition(Controller.getLabyrinth(), (int) (Math.random() * Graph.WIDTH),
-				(int) (Math.random() * Graph.WIDTH));
+	public Ennemy(Labyrinth laby) {
+		super (laby);
 	}
 
 	/**
-	 * Permet de faire d��placer l'ennemi en fonction de la position du joueur �� l'aide l'algorithme de Manhattan.
+	 * Permet de faire déplacer l'ennemi en fonction de la position du joueur à l'aide l'algorithme de Manhattan.
 	 * @param lab Le labyrinthe.
 	 */
 	public void move(Labyrinth lab) {

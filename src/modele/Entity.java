@@ -10,6 +10,11 @@ public abstract class Entity implements Collidable {
 	protected int posY;
 	protected Vertex vertexPos;
 	
+	public Entity (Labyrinth laby) {
+		setPosition(laby, (int) (Math.random() * Graph.WIDTH),
+				(int) (Math.random() * Graph.WIDTH));
+	}
+	
 	/**
 	 * @return La position en x de l'objet.
 	 */
@@ -44,6 +49,10 @@ public abstract class Entity implements Collidable {
 		this.vertexPos = lab.getGraph().getVertex(x, y);
 	}
 	
+	/**
+	 * Permet de savoir si deux objets sont en collision.
+	 * @param c Objet avec lequel on veut tester la collision.
+	 */
 	public boolean collision(Collidable c) {
 		return ((Entity) c).getposX() == posX && ((Entity) c).getposY() == posY;
 	}

@@ -6,6 +6,7 @@ package modele;
  *
  */
 public class Item extends Entity  {
-
-
+	public Item (Labyrinth laby) {
+		super (laby);
+	}
 }

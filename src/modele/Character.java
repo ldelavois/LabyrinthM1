@@ -7,6 +7,10 @@ package modele;
  */
 public abstract class Character extends Entity implements ICharacter {
 
+	public Character (Labyrinth laby) {
+		super (laby);
+	}
+	
 	/**
 	 * Déplace le character dans la direction dir si il n'y a pas de mur 
 	 * @param lab : Le labyrinthe

@@ -18,7 +18,7 @@ public class EnnemyController implements CharacterController {
 	 * @param view
 	 */
 	protected EnnemyController(View view) {
-		ennemy = new Ennemy();
+		ennemy = new Ennemy(Controller.getLabyrinth());
 		this.view=view;
 		view.updateEnnemyPosition(ennemy.getVertexPos());
 	}
