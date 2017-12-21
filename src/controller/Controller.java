@@ -27,7 +27,7 @@ public class Controller implements EventHandler<KeyEvent> {
 		view = new View(Graph.WIDTH, Graph.HEIGHT);
 		playerController = new PlayerController(view);
 		ennemyController = new EnnemyController(view);
-
+		ennemyController.start();
 	}
 
 	/**
@@ -71,10 +71,16 @@ public class Controller implements EventHandler<KeyEvent> {
 		return ennemyController;
 	}
 
+	public void gameOver() {
+		if (playerController.getPlayer().collision(Controller.getInstance().getEnnemyController().getEnnemy())) {
+			System.out.println("PERDU");
+			// ...
+		}
+	}
+
 	@Override
 	public void handle(KeyEvent event) {
 		getPlayerController().movePlayer(event);
-		// bug Manhattan
-		getEnnemyController().moveEnnemy();
+		gameOver();
 	}
 }
