@@ -83,7 +83,7 @@ classes suivants :
 
 Comme on peut le voir dans le dernier diagramme, nous avons choisi
 d'incorporer tous les éléments de la vue dans une seule classe. Ce
-n'est pas incorrecte d'un point de vue conception MVC mais ce n'est
+n'est pas incorrect d'un point de vue conception MVC mais ce n'est
 pas le modèle le plus flexible en terme d'évolution. L'idéal aurait
 été de faire une vue pour chaque élément du modèle que l'on souhaite
 afficher (un peu comme ce que l'on a fait pour le controlleur).
