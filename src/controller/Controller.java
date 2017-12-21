@@ -18,6 +18,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	private static View view;
 	private static PlayerController playerController;
 	private static EnnemyController ennemyController;
+	private static DoorController doorController;
 
 	/**
 	 * 
@@ -70,12 +71,17 @@ public class Controller implements EventHandler<KeyEvent> {
 	protected EnnemyController getEnnemyController() {
 		return ennemyController;
 	}
+	
+	protected DoorController getDoorController() {
+		return doorController;
+	}
 
 	protected void gameOver() {
 		if (playerController.getPlayer().collision(Controller.getInstance().getEnnemyController().getEnnemy())) {
 			System.out.println("PERDU");
-			// ...
-		}
+			System.out.println("Voulez-vous recommencer?");
+			System.out.println("Si oui, veuillez appuyer sur une touche.");
+					}
 	}
 
 	protected void victory() {
