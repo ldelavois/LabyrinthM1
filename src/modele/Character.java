@@ -39,7 +39,7 @@ public abstract class Character extends Entity implements ICharacter {
 				vertexPos = lab.getGraph().getVertex(posX, posY);
 				break;
 			}
-		} else
-			System.out.println("Wall");
+		} //else
+			//System.out.println("Wall");
 	}
 }

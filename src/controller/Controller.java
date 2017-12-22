@@ -78,6 +78,11 @@ public class Controller implements EventHandler<KeyEvent> {
 	protected DoorController getDoorController() {
 		return doorController;
 	}
+	
+	protected ItemController getItemController() {
+		return itemController;
+	}
+
 
 	protected void gameOver() {
 		if (playerController.getPlayer().collision(Controller.getInstance().getEnnemyController().getEnnemy())) {
@@ -104,6 +109,13 @@ public class Controller implements EventHandler<KeyEvent> {
 			System.exit(0);
 		}
 	}
+	
+	protected void CandyDrop() {
+		if (playerController.getPlayer().collision(( Controller.getInstance().getItemController()).getItem())) {
+			System.out.println("Vous avez récupérer un bonbon!");}
+	}
+
+
 	@Override
 	public void handle(KeyEvent event) {
 		getPlayerController().movePlayer(event);

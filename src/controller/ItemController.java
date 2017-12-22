@@ -14,7 +14,7 @@ public class ItemController {
 		view.placeItem(item);
 	}
 	
-	public Item getDoor() {
+	public Item getItem() {
 		return item;
 	}
 }

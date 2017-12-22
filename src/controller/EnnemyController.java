@@ -33,9 +33,9 @@ public class EnnemyController extends Thread {
 	protected void moveEnnemy() {
 		Controller.getLabyrinth().launchManhattan(ennemy.getVertexPos(),
 				Controller.getInstance().getPlayerController().getPlayer().getVertexPos());
-		System.out.println("\nEnemies");
+		//System.out.println("\nEnemies");
 		ennemy.move(Controller.getLabyrinth());
-		System.out.println("position : " + ennemy.getposX() + " ; " + ennemy.getposY());
+		//System.out.println("position : " + ennemy.getposX() + " ; " + ennemy.getposY());
 		view.updateEnnemyPosition(ennemy.getVertexPos());
 		Controller.getInstance().gameOver();
 	}
