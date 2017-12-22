@@ -32,37 +32,54 @@ public class VertexTest {
 
 	@Test
 	public void testGetX() {
-		fail("Not yet implemented");
+		Vertex v1 = new Vertex(11, 10, 19);
+		
+		assertEquals("X ok", v1.getX(), 11);
 	}
 
 	@Test
 	public void testGetY() {
-		fail("Not yet implemented");
+		Vertex v1 = new Vertex(11, 10, 20);
+		assertEquals("Y ok", v1.getY(),10);
 	}
 
 	@Test
 	public void testAreNeighbors() {
-		fail("Not yet implemented");
+		Vertex v1 = new Vertex(10, 10, 20);
+		Vertex v2 = new Vertex(11, 10, 19);
+		
+		assertTrue("Are Neighboors ok", v1.areNeighbors(v2) == true);
 	}
 
 	@Test
 	public void testCompareTo() {
-		fail("Not yet implemented");
+		Vertex v1 = new Vertex(10, 10, 20);
+		Vertex v2 = new Vertex(11, 10, 19);
+		
+		assertTrue("e1 == e1 ok", v1.compareTo(v1) == 0);
+		assertTrue("e1 > e2 ok", v1.compareTo(v2) < 0);
+		assertTrue("e2 < e1 ok", v2.compareTo(v1) > 0);
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		Vertex v1 = new Vertex(10, 10, 20);
+		
+		assertTrue("toString ok", "(20)".compareTo(v1.toString()) == 0);
 	}
 
 	@Test
 	public void testEqualsObject() {
-		fail("Not yet implemented");
+		Vertex v1 = new Vertex(10, 10, 20);
+		Vertex v2 = new Vertex(11, 10, 19);
+		
+		assertTrue("Equals ok", v1.equals(v1) == true);
+		assertTrue("Equals ok", v1.equals(v2) == false);
 	}
 
 	@Test
 	public void testInBorders() {
-		fail("Not yet implemented");
+		Graph g = new Graph();
 	}
 
 	@Test
