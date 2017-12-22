@@ -1,7 +1,7 @@
 package modele;
 
 /**
- * 
+ * Classe qui représente une porte sur un plateau de jeu.
  * @author Ludovic, Julien, Andy, Matthias
  *
  */

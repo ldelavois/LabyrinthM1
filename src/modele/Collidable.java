@@ -1,7 +1,7 @@
 package modele;
 
 /**
- * 
+ * Interface qui représente des objets pouvant entré en contact sur un plateau de jeu.
  * @author Ludovic, Julien, Andy, Matthias
  *
  */

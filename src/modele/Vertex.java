@@ -1,7 +1,7 @@
 package modele;
 
 /**
- * 
+ * Classe Vertex. Représente un sommet du graph.
  * @author Ludovic, Julien, Matthias, Andy
  *
  */

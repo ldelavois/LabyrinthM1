@@ -6,7 +6,7 @@ import java.util.List;
 import org.jgrapht.graph.SimpleGraph;
 
 /**
- * 
+ * Classe qui représente une structure de donnée de graph.
  * @author Ludovic, Julien, Andy, Matthias
  *
  */

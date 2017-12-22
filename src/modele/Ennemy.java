@@ -1,7 +1,7 @@
 package modele;
 
 /**
- * 
+ * Classe représentant un ennemi dans un jeu.
  * @author Ludovic, Julien, Andy, Matthias
  *
  */

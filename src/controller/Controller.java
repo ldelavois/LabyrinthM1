@@ -99,7 +99,7 @@ public class Controller implements EventHandler<KeyEvent> {
 
 	protected void victory() {
 		if(playerController.getPlayer().collision(Controller.getInstance().getDoorController().getDoor())) {
-			System.out.println("Vous avez gagn� !");
+			System.out.println("Vous avez gagné !");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -109,12 +109,15 @@ public class Controller implements EventHandler<KeyEvent> {
 			System.exit(0);
 		}
 	}
-	
+
 	protected void itemDrop() {
-		if (playerController.getPlayer().collision(itemController.getItem())) {
-			System.out.println("Vous avez r�cup�r� un bonbon!");
-			System.out.println("test");
-			}
+		if (itemController.getItem() != null) {
+				if (playerController.getPlayer().collision(itemController.getItem())) {
+					System.out.println("Vous avez récupéré un bonbon!");
+					view.deleteCandy();
+					itemController.deleteItem();
+				}
+		}
 	}
 
 
