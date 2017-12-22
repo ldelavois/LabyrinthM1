@@ -1,6 +1,6 @@
 #+TITLE: Rapport : Projet Approche Objet 2017
 
-#+AUTHOR: L. DELAVOIS, J. MASSONNEAU, A. MAHAZOASY, M. PAULMIER
+#+AUTHOR: L. DELAVOIS, J. MASSONNEAU, A. MAHAZOASY, M. PAULMIER (M1 INFO G2)
 
 #+STARTUP: entitiespretty
 
@@ -119,23 +119,24 @@ modifier et parcourir notre graphe.
 * Fenêtre de jeu
 
 Pour l'affichage de notre jeu, nous avons utilisé la bibliothèque JavaFX
-qui s'occupe de l'affichage. Le répertoire =view= de notre projet
+qui s'occupe de l'affichage. Nous nous sommes appuyés sur l'ébauche de code du sujet (partie 5: Dessiner tout ça).
+Le répertoire =view= de notre projet
 permet de créer la fenêtre de jeu et placer les éléments (labyrinthe,
 personnages, objets...) dans celle-ci. Comme vu plus tôt, toute la vue est
 gérée par une seule classe, ce n'est pas un problème pour le respect
 du modèle MVC, en revanche ce n'est pas une pratique courante ou
-recommandée pour les projet que l'on veut modulaires. En effet,
+recommandée pour les projets que l'on veut modulaires. En effet,
 chaque classe ne doit pas pas dépasser les 300 lignes.Au delà,
-on considère qu'il est possible de diviser la classe.
+on considère qu'il est possible de diviser la classe. Une amélioration aurait été de créer les fichiers =ViewPlayer=,  =ViewLabyrinthe= , =ViewItem= , =ViewEnnemy= ...
 
 * Javadoc
 
 Nous avons documenté toutes nos classes, méthodes et variables
 publiques avec l'outil /javadoc/. Cela nous permet de générer une
-documentation structurer de notre projet en /html/. Un autre avantage
+documentation structurée de notre projet en /html/. Un autre avantage
 est la possibilité d'avoir la documentation directement dans
 l'éditeur. *Eclipse*, *NetBeans* et *IntelliJ IDEA* prennent en charge
-la /javdoc/ par défaut par exemple, mais certains modes pour l'éditeur
+la /javadoc/ par défaut par exemple, mais certains modes pour l'éditeur
 *Emacs* ou plugins *Vim* permettent de naviguer dans la javadoc
 efficacement.
 
@@ -202,7 +203,7 @@ d'erreur sur la fenêtre.
 
 Ensuite, il n'y a qu'un seul bonbon par partie. On pourrait ajouter un
 timer qui ferait afficher et disparaître les bonbons à intervalles
-régulièrs en utilisant des bonbons différents qui pourraient
+réguliers en utilisant des bonbons différents qui pourraient
 éventuellement valoir plus ou moins de points.
 
 Enfin on pourrait imaginer un système de comptage de points
