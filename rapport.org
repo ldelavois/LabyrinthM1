@@ -15,11 +15,11 @@ de gestion de versions /[[https://git-scm.com/][git]]/ avec un dépot hébergé 
 [[https://github.com/ldelavois/LabyrinthM1][github]].
 
 Ce projet consistait en la réalisation d'un jeu de plateau type
-PacMan. Pour cela nous avons formé un groupe de 4 étudiants de M1
+PacMan. Pour cela nous avons formé un groupe de quatre étudiants de Master1
 informatique. Nous avons utilisé la bibliothèque java [[http://jgrapht.org][jgrapht]] pour ce
 qui est de l'implémentation de la structure de données qui accueillera
 notre plateau de jeu. L'intérêt de ce projet réside principalement
-dans la mise en oeuvre de patrons de conception et principe de
+dans la mise en oeuvre de patrons de conception et dans le principe de
 programmation objet vus en cours. La partie implémentation des
 algorithmes n'est pas le sujet principal de ce projet.
 
@@ -34,24 +34,24 @@ Pour ce projet, nous devions respecter quelques contraintes :
 - appliquer les tests unitaires
 * Répartition du travail
 
-En début de projet, nous nous sommes répartit les tâches de la façon
+En début de projet, nous nous sommes répartis les tâches de la manière
 suivante :
 
 - implémentation de l'algorithme de Manhattan : Andy
-- implémentation du graph et du labyrinthe : Matthias
+- implémentation du graphe et du labyrinthe : Matthias
 - implémentation de la vue : Ludovic
 - implémentation du joueur : Julien
 
-Le problème avec cette répartition c'est que nous avions certaines
+Le problème avec cette répartition est que nous avions certaines
 tâches qui dépendaient de la finition d'autres (par exemple, le
 labyrinthe devait être fini pour l'algo de Manhattan). Au final nous
 avons terminé tous ensemble les parties cruciales en TD avant de se
-lancer dans nos tâches. Nous nous sommes rendu compte qu'il fallait
+lancer dans nos tâches. Nous nous sommes rendus compte qu'il fallait
 avoir un modèle solide pour pouvoir implémenter la vue. Le labyrinthe
 n'a pu être affiché qu'après le troisième TD avec le retard que nous
 avions pris sur l'implémentation du modèle.
 
-Ensuite, la répartition du travail s'est effectuée de la manière suivante.
+Ensuite, la répartition du travail s'est effectuée de la manière suivante:
 
 Julien s'est occupé de l'implémention des controllers (1 seul au début
 qui à été séparé en plusieurs) et des personnages (=Player= et
@@ -63,7 +63,7 @@ implémenté la vue.
 
 Matthias a continué l'implémentation du modèle avec les classes
 =Door=, =Item= et les classes abstraites et interfaces du modèle. Il
-s'est également occupé de la rédaction du rapport ainsi que de la
+s'est également occupé de la rédaction du rapport (relu et corrigé par Ludovic) ainsi que de la
 javadoc (pour les fonctions, classes et attributs non documentées).
 
 Andy s'est occupé de l'implémentation des tests unitaires des classes
@@ -87,12 +87,12 @@ classes suivants :
 \clearpage
 #+END_EXPORT
 
-Comme on peut le voir dans le dernier diagramme, nous avons choisi
+Comme nous pouvons le voir dans le dernier diagramme, nous avons choisi
 d'incorporer tous les éléments de la vue dans une seule classe. Ce
 n'est pas incorrect d'un point de vue conception MVC mais ce n'est
 pas le modèle le plus flexible en terme d'évolution. L'idéal aurait
 été de faire une vue pour chaque élément du modèle que l'on souhaite
-afficher (un peu comme ce que l'on a fait pour le controlleur).
+afficher (un peu comme ce que nous avons fait pour le controlleur).
 
 Pour générer ces diagrammes de classes, nous avons utilisé le plugin
 eclipse ModelGoon UML4Java. Nous avons privilégié cet outil à d'autres
@@ -122,11 +122,11 @@ Pour l'affichage de notre jeu, nous avons utilisé la bibliothèque JavaFX
 qui s'occupe de l'affichage. Nous nous sommes appuyés sur l'ébauche de code du sujet (partie 5: Dessiner tout ça).
 Le répertoire =view= de notre projet
 permet de créer la fenêtre de jeu et placer les éléments (labyrinthe,
-personnages, objets...) dans celle-ci. Comme vu plus tôt, toute la vue est
+personnages, objets...) dans celle-ci. Comme vu précédemment, toute la vue est
 gérée par une seule classe, ce n'est pas un problème pour le respect
 du modèle MVC, en revanche ce n'est pas une pratique courante ou
-recommandée pour les projets que l'on veut modulaires. En effet,
-chaque classe ne doit pas pas dépasser les 300 lignes.Au delà,
+recommandée pour les projets que l'on souhaite modulaires. En effet,
+chaque classe ne doit pas pas dépasser les 300 lignes. Au delà,
 on considère qu'il est possible de diviser la classe. Une amélioration aurait été de créer les fichiers =ViewPlayer=,  =ViewLabyrinthe= , =ViewItem= , =ViewEnnemy= ...
 
 * Javadoc
@@ -142,45 +142,39 @@ efficacement.
 
 * Tests unitaires
 
-On va créer des tests unitaires pour le graphe seulement (classes
-Graph, Vertex et Edge). On verra si on a le temps pour plus après mais
-je ne suis pas sur que ce soit nécessaire.
-
 Nos tests unitaires se sont concentrés sur les classes Graph, Edge et
-Vertex du modèle, trouvant que celles-ci sont les plus sensibles lors
+Vertex du modèle. Nous avons trouvé que celles-ci sont les plus sensibles lors
 de la création du projet et qu’elles sont celles qui interagissent le
 plus avec le reste des classes.
 
-Les tests unitaires à l’aide de JUnit fonctionnent à l’aide de classe
-spécialement dédié à leur classe d’origine qu’on a respectivement
+Les tests unitaires avec JUnit fonctionnent à l’aide de classe
+spécialement dédiéé à leur classe d’origine qu’on a respectivement
 appelé GraphTest, EdgeTest, et VertexTest. A l’intérieur de chacune
 d’elle se trouve des méthodes qui permettront de tester le
 fonctionnement de la méthode correspondant: par exemple, inBorders()
-de la classe Vertex sera vérifié à l’intérieur de la méthode
+de la classe Vertex sera vérifiée à l’intérieur de la méthode
 testInBorders().
 
-On crée un environnement à l’intérieur des classes de test qui va être
+Nous avons créé un environnement à l’intérieur des classes de test qui va être
 le sujet des différentes méthodes. On a fait en sorte que chaque
-méthode soit vérifié si le résultat est supposé être bon, et/ou si le
+méthode soit vérifiée si le résultat est supposé être bon, et/ou si le
 résultat est supposé être mauvais. Chaque méthode possède une fonction
 de type assert qui comparera pour nous le résultat obtenu et le
 résultat attendu.
 
-Après avoir écrit les méthodes tests, on peut activer JUnit en le
-lançant depuis la classe test, et donnera automatiquement si les
-attentes et les résultats correspondent pour chacune des méthodes à
-tester.
+Après avoir écrit les méthodes tests, nous pouvons activer JUnit en le
+lançant depuis la classe test. Les tests passeront si les attentes et les résultats correspondent pour chacune des méthodes à tester.
 
 Nous avons ainsi réussi à tester nos classes, et chaque méthode pour
-chaque classe marche fonctionne correctement selon les conditions que
-l’on s’est fixé.
+chaque classe fonctionne correctement selon les conditions que
+nous nous sommes fixés.
 
 
 * Déroulement d'une partie
 
 Le joueur déplace son personnage avec les touches fléchées. Le but du
 jeu est d'atteindre la porte sans être touché par un ennemi. Si un
-ennemi est touché, la partie est perdu et la fenêtre de jeu est
+ennemi est touché, la partie est perdue et la fenêtre de jeu est
 fermée. Il y a aussi un bonbon sur le plateau de jeu que le joueur
 peut aller chercher avant d'atteindre la porte. Dans notre
 implémentation cela n'apporte rien de plus au joueur.
@@ -232,7 +226,7 @@ trouver la localisation du bug rapidement. Sa résolution a, quant à
 elle, pris plus de temps.
 
 L'organisation n'a pas été des plus simple. L'organisation d'un groupe
-de 4 personnes est compliquée pour un projet comme celui-ci, de plus
+de quatre personnes est compliquée pour un projet comme celui-ci, de plus
 nous n'étions pas un groupe déjà formé avant ce projet. Le projet
 n'est pas terminé en tant que jeu mais la réalisation d'une
 application relativement conséquente orientée objet et respectant le
