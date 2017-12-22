@@ -16,6 +16,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	private static Labyrinth lab;
 	private static Controller instance = new Controller();
 	private static View view;
+	private static Item item;
 	private static PlayerController playerController;
 	private static EnnemyController ennemyController;
 	private static DoorController doorController;
@@ -109,11 +110,16 @@ public class Controller implements EventHandler<KeyEvent> {
 			System.exit(0);
 		}
 	}
-	
+
 	protected void itemDrop() {
+
 		if (playerController.getPlayer().collision(itemController.getItem())) {
 			System.out.println("Vous avez r�cup�r� un bonbon!");
-			System.out.println("test");
+			view.deleteCandy();
+			item.setPosition(lab, 0, 0);
+
+			
+			
 			}
 	}
 

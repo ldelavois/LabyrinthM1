@@ -166,6 +166,9 @@ public class View {
 		i.setY((int) ((WALL + v.getY() * (WALL + CELL)) * SPAN));
 	}
 	
+	public void deleteCandy(){
+		pane.getChildren().remove(candy1);
+		}
 	/**
 	 * Démare le jeu en dessinant le labyrinthe et en positionnant les personnages et collectibles.
 	 * @param primaryStage L'objet stage de la fenêtre.
@@ -174,12 +177,14 @@ public class View {
 	public void start(Stage primaryStage, Labyrinth lab) {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Labyrinthe");
+	    System.out.println("A vous de jouer!");
 		primaryStage.show();
 		drawGraph(lab.getGraph());
 		pane.getChildren().add(player);
 		pane.getChildren().add(ennemy);
 		pane.getChildren().add(door);
-		pane.getChildren().add(candy1);
+		pane.getChildren().add(candy1); 
+		//pane.getChildren().remove(candy1);
 	}
 
 	/**
