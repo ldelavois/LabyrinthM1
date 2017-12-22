@@ -6,8 +6,9 @@ import modele.Player;
 import view.View;
 
 /**
+ * Controlleur pour le joueur.
  * 
- * @author
+ * @author Ludovic, Julien, Andy, Matthias
  *
  */
 public class PlayerController {
@@ -16,8 +17,8 @@ public class PlayerController {
 	private View view;
 
 	/**
-	 * 
-	 * @param view
+	 * Constructeur de la classe
+	 * @param view View sur laquelle on veut afficher la porte.
 	 */
 	protected PlayerController(View view) {
 		player = new Player(Controller.getLabyrinth());
@@ -34,10 +35,9 @@ public class PlayerController {
 	}
 
 	/**
-	 * D��place le joueur en fonction des touches directionnelles du clavier
+	 * Déplace le joueur en fonction des touches directionnelles du clavier
 	 * 
-	 * @param event
-	 *            Evenement d'un appui sur une touches du clavier
+	 * @param event Evenement d'un appui sur une touches du clavier
 	 */
 	public void movePlayer(KeyEvent event) {
 

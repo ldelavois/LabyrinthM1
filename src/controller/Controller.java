@@ -7,8 +7,10 @@ import view.*;
 import modele.*;
 
 /**
+ * Cette classe s'occupe d'orchestrer tous les controlleursbde l'application ainsi que de 
+ * réaliser quelques opérations comme la terminaison de l'application.
  * 
- * @author
+ * @author Ludovic, Julien, Andy, Matthias
  *
  */
 public class Controller implements EventHandler<KeyEvent> {
@@ -22,7 +24,8 @@ public class Controller implements EventHandler<KeyEvent> {
 	private static ItemController itemController;
 
 	/**
-	 * 
+	 * Constructeur de la classe. Récupère toutes les instances des controlleurs nécessaires 
+	 * et lance l'application
 	 */
 	private Controller() {
 		lab = new Labyrinth();
@@ -36,7 +39,7 @@ public class Controller implements EventHandler<KeyEvent> {
 
 	/**
 	 * 
-	 * @return
+	 * @return Le layrinthe du jeu.
 	 */
 	public static Labyrinth getLabyrinth() {
 		return lab;
@@ -44,15 +47,15 @@ public class Controller implements EventHandler<KeyEvent> {
 
 	/**
 	 * 
-	 * @return
+	 * @return L'instance unique de la classe.
 	 */
 	public static Controller getInstance() {
 		return instance;
 	}
 
 	/**
-	 * 
-	 * @param primaryStage
+	 * Démarre l'application.
+	 * @param primaryStage Stage (JavaFX) principale de l'application.
 	 */
 	public void start(Stage primaryStage) {
 		view.start(primaryStage, lab);
@@ -119,7 +122,6 @@ public class Controller implements EventHandler<KeyEvent> {
 				}
 		}
 	}
-
 
 	@Override
 	public void handle(KeyEvent event) {

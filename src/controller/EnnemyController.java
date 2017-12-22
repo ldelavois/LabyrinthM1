@@ -4,8 +4,9 @@ import modele.Ennemy;
 import view.View;
 
 /**
+ * Controlleur pour l'ennemi (ou les ennemis) du plateau de jeu.
  * 
- * @author
+ * @author Ludovic, Julien, Andy, Matthias
  *
  */
 public class EnnemyController extends Thread {
@@ -14,8 +15,8 @@ public class EnnemyController extends Thread {
 	private View view;
 
 	/**
-	 * 
-	 * @param view
+	 * Constructeur de la classe.
+	 * @param view View sur laquelle on veut afficher la porte.
 	 */
 	protected EnnemyController(View view) {
 		ennemy = new Ennemy(Controller.getLabyrinth());
@@ -27,9 +28,6 @@ public class EnnemyController extends Thread {
 		return ennemy;
 	}
 
-	/**	
-	 * 
-	 */
 	protected void moveEnnemy() {
 		Controller.getLabyrinth().launchManhattan(ennemy.getVertexPos(),
 				Controller.getInstance().getPlayerController().getPlayer().getVertexPos());
