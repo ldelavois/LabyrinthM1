@@ -28,6 +28,7 @@ public class Controller implements EventHandler<KeyEvent> {
 		view = new View(Graph.WIDTH, Graph.HEIGHT);
 		playerController = new PlayerController(view);
 		ennemyController = new EnnemyController(view);
+		doorController = new DoorController(view);
 		ennemyController.start();
 	}
 
