@@ -9,15 +9,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import modele.Directions;
-import modele.Graph;
 import modele.Vertex;
 
 public class VertexTest {
-	private static Graph g;
 	private static Vertex v1, v2,v3;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		g = new Graph();
 		v1 = new Vertex(10, 10, 20);
 		v2 = new Vertex(11, 10, 19);
 		v3 = new Vertex(15, 10, 20);
@@ -25,7 +22,6 @@ public class VertexTest {
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		g = null;
 		v1 = null;
 		v2 = null;
 		v3 = null;

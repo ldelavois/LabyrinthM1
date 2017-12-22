@@ -2,21 +2,17 @@ package test;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import modele.Directions;
-import modele.Edge;
 import modele.Graph;
 import modele.Vertex;
 
 public class GraphTest {
 	private static Graph g;
 	private static Vertex v1, v2, v3, v4;
-	private static Edge e1, e2;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -29,8 +25,6 @@ public class GraphTest {
 		g.addVertex(v2);
 		g.addVertex(v3);
 		g.addVertex(v4);
-		e1 = g.addEdge(v1, v2);
-		e2 = g.addEdge(v3, v4);
 	}
 
 	@AfterClass
@@ -40,8 +34,6 @@ public class GraphTest {
 		v2 = null;
 		v3 = null;
 		v4 = null;
-		e1 = null;
-		e2 = null;
 	}
 
 	@Test
