@@ -93,7 +93,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 
 	protected void victory() {
-		if(playerController.getPlayer().collision(/*changer avec la porte*/Controller.getInstance().getEnnemyController().getEnnemy())) {
+		if(playerController.getPlayer().collision(Controller.getInstance().getDoorController().getDoor())) {
 			System.out.println("Vous avez gagné!");
 			try {
 				Thread.sleep(1000);
