@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="controller.Controller" x="69" y="24">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="controller.ItemController"
+            endpointName="itemController" kind="Simple"/>
+        <Association destinationClassName="controller.EnnemyController"
+            endpointName="ennemyController" kind="Simple"/>
+        <Association destinationClassName="controller.PlayerController"
+            endpointName="playerController" kind="Simple"/>
+        <Association destinationClassName="controller.DoorController"
+            endpointName="doorController" kind="Simple"/>
+        <Communication destinationClassName="controller.PlayerController"/>
+    </Class>
+    <Class name="controller.ItemController" x="294" y="252">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="controller.Controller"/>
+    </Class>
+    <Class name="controller.PlayerController" x="56" y="257">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="controller.Controller"/>
+    </Class>
+    <Class name="controller.EnnemyController" x="513" y="258">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="controller.Controller"/>
+    </Class>
+    <Class name="controller.DoorController" x="517" y="78">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="controller.Controller"/>
+    </Class>
+</ClassDiagram>

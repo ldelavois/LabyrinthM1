@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/controller/PlayerController.java=UTF-8
+encoding//src/modele/Character.java=UTF-8
+encoding//src/modele/Door.java=UTF-8
+encoding//src/modele/Edge.java=UTF-8
+encoding//src/modele/Ennemy.java=UTF-8
+encoding//src/modele/Entity.java=UTF-8
+encoding//src/modele/Graph.java=UTF-8
+encoding//src/modele/ICharacter.java=UTF-8
+encoding//src/modele/Labyrinth.java=UTF-8
+encoding//src/modele/Player.java=UTF-8
+encoding//src/modele/Vertex.java=UTF-8
+encoding//src/view/View.java=UTF-8
