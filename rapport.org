@@ -1,6 +1,6 @@
 #+TITLE: Rapport : Projet Approche Objet 2017
 
-#+AUTHOR: L. DELAVOIS, J. MASSONNEAU, A. MAHAZOASY, M. PAULMIER
+#+AUTHOR: L. DELAVOIS, J. MASSONNEAU, A. MAHAZOASY, M. PAULMIER (M1 INFO G2)
 
 #+STARTUP: entitiespretty
 
@@ -127,7 +127,7 @@ gérée par une seule classe, ce n'est pas un problème pour le respect
 du modèle MVC, en revanche ce n'est pas une pratique courante ou
 recommandée pour les projets que l'on veut modulaires. En effet,
 chaque classe ne doit pas pas dépasser les 300 lignes.Au delà,
-on considère qu'il est possible de diviser la classe. Une amélioration aurait été de créer les fichiers =ViewPlayer=, =ViewLabyrinthe=,=ViewItem=,=ViewEnnemy=...
+on considère qu'il est possible de diviser la classe. Une amélioration aurait été de créer les fichiers =ViewPlayer=,  =ViewLabyrinthe= , =ViewItem= , =ViewEnnemy= ...
 
 * Javadoc
 
