@@ -53,15 +53,18 @@ avions pris sur l'implémentation du modèle.
 
 Ensuite, la répartition du travail s'est effectuée de la manière suivante.
 
-Julien s'est occupé de l'implémention des controllers (1 seul au
-début qui à été séparé en plusieurs).
+Julien s'est occupé de l'implémention des controllers (1 seul au début
+qui à été séparé en plusieurs) et des personnages (=Player= et
+=Ennemy=).
 
 Ludovic (création de la fenêtre et affichage du labyrinthe) et
 Matthias (affichage et mise à jour de la position des joueurs) ont
 implémenté la vue.
 
-Matthias s'est occupé de la rédaction du rapport ainsi que de la
-javadoc (pour les fonctions non documentées).
+Matthias a continué l'implémentation du modèle avec les classes
+=Door=, =Item= et les classes abstraites et interfaces du modèle. Il
+s'est également occupé de la rédaction du rapport ainsi que de la
+javadoc (pour les fonctions, classes et attributs non documentées).
 
 Andy s'est occupé de l'implémentation des tests unitaires des classes
 Graph, Vertex et Edge.
@@ -142,6 +145,40 @@ On va créer des tests unitaires pour le graphe seulement (classes
 Graph, Vertex et Edge). On verra si on a le temps pour plus après mais
 je ne suis pas sur que ce soit nécessaire.
 
+* Déroulement d'une partie
+
+Le joueur déplace son personnage avec les touches fléchées. Le but du
+jeu est d'atteindre la porte sans être touché par un ennemi. Si un
+ennemi est touché, la partie est perdu et la fenêtre de jeu est
+fermée. Il y a aussi un bonbon sur le plateau de jeu que le joueur
+peut aller chercher avant d'atteindre la porte. Dans notre
+implémentation cela n'apporte rien de plus au joueur.
+
+L'ennemi se déplace toutes les secondes sur le plateau en essayant de
+rattraper le joueur afin de l'empêcher d'atteindre la porte.
+
+* Amélioration à apporter au jeu
+
+En soit, le jeu n'est pas très amusant. Il y a beaucoup de place pour
+l'amélioration du jeu. Il faudrai, par exemple, pouvoir ajouter
+plusieurs niveaux avec une augmentation en dificulté (accélération du
+joueur, ajout d'ennemis, ajout des boutons, ajout de portes fermant
+certains couloirs...).
+
+Lorsque la partie se termine, la fenêtre est simplement fermée et un
+message est affiché dans la console indiquand si l'on a perdu ou
+gagné. Il serai plus agréable pour l'utilisateur d'avoir un message
+d'erreur sur la fenêtre.
+
+Ensuite, il n'y a qu'un seul bonbon par partie. On pourrai ajouter un
+timer qui ferai afficher et disparaître les bonbons à intervalles
+régulières en utilisant des bonbons différents qui pourraient
+éventuellement valoir plus ou moin de points.
+
+Enfin on pourrai imaginer un système de comptage de points
+(en ramassant les bonbons, effectuant le moins de déplacement...) à
+afficher à la fin de la partie.
+
 * Conclusion
 
 Ce projet nous a permis d'appliquer les concepts vu en
@@ -168,5 +205,4 @@ de 4 personnes est compliquée pour un projet comme celui-ci, de plus
 nous n'étions pas un groupe déjà formé avant ce projet. Le projet
 n'est pas terminé en tant que jeu mais la réalisation d'une
 application relativement conséquente orientée objet et respectant le
-modèle *MVC* était le but premier de celui-ci. Enfin, certains membres
-du groupe ont dû apprendre à utiliser GitHub (pour le travail collaboratif) qu'ils n'ont pas utilisé auparavant.
+modèle *MVC* était le but premier de celui-ci.
