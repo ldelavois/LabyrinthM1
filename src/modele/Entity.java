@@ -1,7 +1,7 @@
 package modele;
 
 /**
- * 
+ * Classe qui permet de représenter un "objet" inanimé ou animé sur un plateau de jeu.
  * @author Ludovic, Julien, Andy, Matthias
  *
  */

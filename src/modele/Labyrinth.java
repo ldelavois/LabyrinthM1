@@ -6,6 +6,9 @@ import java.util.Random;
 import java.util.Vector;
 
 /**
+ * Cette classe représente la layrinthe à afficher sur le plateau de jeu.
+ * 
+ * Il y a aussi plusieurs fonctions permettant la construction de chemins dans le graph.
  * 
  * @author Ludovic, Julien, Matthias, Andy
  *

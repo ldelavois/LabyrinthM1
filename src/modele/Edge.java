@@ -3,7 +3,7 @@ package modele;
 import org.jgrapht.graph.DefaultEdge;
 
 /**
- * 
+ * Classe qui représente une arrête d'un graph.
  * @author Ludovic, Julien, Andy, Matthias
  *
  */
@@ -28,7 +28,7 @@ public class Edge extends DefaultEdge implements Comparable<Edge> {
 
 	/**
 	 * 
-	 * @return Le sommet de d��part.
+	 * @return Le sommet de départ.
 	 */
 	public Vertex source() {
 		return (Vertex) this.getSource();

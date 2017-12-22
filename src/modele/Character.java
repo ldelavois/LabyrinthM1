@@ -1,7 +1,7 @@
 package modele;
 
 /**
- * 
+ * Classe permettant de représenter un personnage (hostile ou non) sur un plateau de jeu.
  * @author Ludovic, Julien, Andy, Matthias
  *
  */
