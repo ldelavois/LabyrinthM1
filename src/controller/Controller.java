@@ -81,15 +81,27 @@ public class Controller implements EventHandler<KeyEvent> {
 
 	protected void gameOver() {
 		if (playerController.getPlayer().collision(Controller.getInstance().getEnnemyController().getEnnemy())) {
-			System.out.println("PERDU");
-			System.out.println("Voulez-vous recommencer?");
-			System.out.println("Si oui, veuillez appuyer sur une touche.");
+			System.out.println("Vous avez perdu!");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.exit(0);
 					}
 	}
 
 	protected void victory() {
 		if(playerController.getPlayer().collision(/*changer avec la porte*/Controller.getInstance().getEnnemyController().getEnnemy())) {
-			System.out.println("GAGNE");
+			System.out.println("Vous avez gagné!");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.exit(0);
 		}
 	}
 	@Override
