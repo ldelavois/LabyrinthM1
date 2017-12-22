@@ -17,4 +17,8 @@ public class ItemController {
 	public Item getItem() {
 		return item;
 	}
+	
+	public void deleteItem() {
+		item = null;
+	}
 }

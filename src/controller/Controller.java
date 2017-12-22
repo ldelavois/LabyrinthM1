@@ -16,7 +16,6 @@ public class Controller implements EventHandler<KeyEvent> {
 	private static Labyrinth lab;
 	private static Controller instance = new Controller();
 	private static View view;
-	private static Item item;
 	private static PlayerController playerController;
 	private static EnnemyController ennemyController;
 	private static DoorController doorController;
@@ -100,7 +99,7 @@ public class Controller implements EventHandler<KeyEvent> {
 
 	protected void victory() {
 		if(playerController.getPlayer().collision(Controller.getInstance().getDoorController().getDoor())) {
-			System.out.println("Vous avez gagn� !");
+			System.out.println("Vous avez gagné !");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -112,15 +111,13 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 
 	protected void itemDrop() {
-
-		if (playerController.getPlayer().collision(itemController.getItem())) {
-			System.out.println("Vous avez r�cup�r� un bonbon!");
-			view.deleteCandy();
-			item.setPosition(lab, 0, 0);
-
-			
-			
-			}
+		if (itemController.getItem() != null) {
+				if (playerController.getPlayer().collision(itemController.getItem())) {
+					System.out.println("Vous avez récupéré un bonbon!");
+					view.deleteCandy();
+					itemController.deleteItem();
+				}
+		}
 	}
 
 
