@@ -16,7 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 /**
- * 
+ * Classe s'occupant de l'affichage de notre application.
  * @author Ludovic, Julien, Andy, Matthias
  *
  */
@@ -158,14 +158,15 @@ public class View {
 	public void placeItem(Item i) {
 		placeSprite (candy1, i.getVertexPos());
 	}
-	
-
 
 	private void placeSprite (ImageView i, Vertex v) {
 		i.setX((int) ((WALL + v.getX() * (WALL + CELL)) * SPAN));
 		i.setY((int) ((WALL + v.getY() * (WALL + CELL)) * SPAN));
 	}
 	
+	/**
+	 * Supprime le bonbon de l'affichage.
+	 */
 	public void deleteCandy(){
 		pane.getChildren().remove(candy1);
 		}
