@@ -3,8 +3,10 @@ package view;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import modele.Door;
 import modele.Edge;
 import modele.Graph;
+import modele.Item;
 import modele.Labyrinth;
 import modele.Vertex;
 import controller.Controller;
@@ -144,8 +146,17 @@ public class View {
 	 * Place la porte
 	 * @param c La nouvelle position
 	 */
-	public void placeDoor (Vertex c) {
-		placeSprite (door, c);
+	public void placeDoor (Door d) {
+		placeSprite (door, d.getVertexPos());
+	}
+	
+	/**
+	 * Place les items à ramasser
+	 * @param c La position de l'item
+	 */
+	public void placeItem(Item i) {
+		System.out.println("Pos :" +i.getVertexPos());
+		placeSprite (candy1, i.getVertexPos());
 	}
 
 	private void placeSprite (ImageView i, Vertex v) {
@@ -176,4 +187,6 @@ public class View {
 	public void keyPressed(Controller eventhandler) {
 		scene.setOnKeyPressed(eventhandler);
 	}
+
+	
 }

@@ -19,6 +19,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	private static PlayerController playerController;
 	private static EnnemyController ennemyController;
 	private static DoorController doorController;
+	private static ItemController itemController;
 
 	/**
 	 * 
@@ -29,6 +30,7 @@ public class Controller implements EventHandler<KeyEvent> {
 		playerController = new PlayerController(view);
 		ennemyController = new EnnemyController(view);
 		doorController = new DoorController(view);
+		itemController = new ItemController(view);
 		ennemyController.start();
 	}
 
