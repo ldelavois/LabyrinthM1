@@ -60,8 +60,8 @@ Ludovic (création de la fenêtre et affichage du labyrinthe) et
 Matthias (affichage et mise à jour de la position des joueurs) ont
 implémenté la vue.
 
-Matthias s'est occupé de la rédaction du rapport ainsi que de la
-javadoc (pour les fonctions non documentées).
+Matthias a r. Il s'est également occupé de la rédaction du rapport ainsi
+que de la javadoc (pour les fonctions non documentées).
 
 Andy s'est occupé de l'implémentation des tests unitaires des classes
 Graph, Vertex et Edge.
@@ -142,6 +142,27 @@ On va créer des tests unitaires pour le graphe seulement (classes
 Graph, Vertex et Edge). On verra si on a le temps pour plus après mais
 je ne suis pas sur que ce soit nécessaire.
 
+* Amélioration à apporter au jeu
+
+En soit, le jeu n'est pas très amusant. Il y a beaucoup de place pour
+l'amélioration du jeu. Il faudrai, par exemple, pouvoir ajouter
+plusieurs niveaux avec une augmentation en dificulté (accélération du
+joueur, ajout d'ennemis, ajout des boutons, ajout de portes fermant
+certains couloirs...).
+
+Lorsque la partie se termine, la fenêtre est simplement fermée et un
+message est affiché dans la console indiquand si l'on a perdu ou
+gagné. Il serai plus agréable pour l'utilisateur d'avoir un message
+d'erreur sur la fenêtre.
+
+Ensuite, il n'y a qu'un seul bonbon par partie. On pourrai ajouter un
+timer qui ferai afficher et disparaître les bonbons à intervalles
+régulières.
+
+Enfin on pourrai imaginer un système de comptage de points
+(en ramassant les bonbons, effectuant le moins de déplacement...) à
+afficher à la fin de la partie.
+
 * Conclusion
 
 Ce projet nous a permis d'appliquer les concepts vu en
@@ -168,5 +189,4 @@ de 4 personnes est compliquée pour un projet comme celui-ci, de plus
 nous n'étions pas un groupe déjà formé avant ce projet. Le projet
 n'est pas terminé en tant que jeu mais la réalisation d'une
 application relativement conséquente orientée objet et respectant le
-modèle *MVC* était le but premier de celui-ci. Enfin, certains membres
-du groupe ont dû apprendre à utiliser GitHub (pour le travail collaboratif) qu'ils n'ont pas utilisé auparavant.
+modèle *MVC* était le but premier de celui-ci.
