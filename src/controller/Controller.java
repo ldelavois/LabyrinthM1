@@ -94,12 +94,12 @@ public class Controller implements EventHandler<KeyEvent> {
 				e.printStackTrace();
 			}
 			System.exit(0);
-					}
+		}
 	}
 
 	protected void victory() {
 		if(playerController.getPlayer().collision(Controller.getInstance().getDoorController().getDoor())) {
-			System.out.println("Vous avez gagné!");
+			System.out.println("Vous avez gagnÃ© !");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
