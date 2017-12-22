@@ -139,11 +139,41 @@ la /javdoc/ par défaut par exemple, mais certains modes pour l'éditeur
 *Emacs* ou plugins *Vim* permettent de naviguer dans la javadoc
 efficacement.
 
-* TODO Tests unitaires
+* Tests unitaires
 
 On va créer des tests unitaires pour le graphe seulement (classes
 Graph, Vertex et Edge). On verra si on a le temps pour plus après mais
 je ne suis pas sur que ce soit nécessaire.
+
+Nos tests unitaires se sont concentrés sur les classes Graph, Edge et
+Vertex du modèle, trouvant que celles-ci sont les plus sensibles lors
+de la création du projet et qu’elles sont celles qui interagissent le
+plus avec le reste des classes.
+
+Les tests unitaires à l’aide de JUnit fonctionnent à l’aide de classe
+spécialement dédié à leur classe d’origine qu’on a respectivement
+appelé GraphTest, EdgeTest, et VertexTest. A l’intérieur de chacune
+d’elle se trouve des méthodes qui permettront de tester le
+fonctionnement de la méthode correspondant: par exemple, inBorders()
+de la classe Vertex sera vérifié à l’intérieur de la méthode
+testInBorders().
+
+On crée un environnement à l’intérieur des classes de test qui va être
+le sujet des différentes méthodes. On a fait en sorte que chaque
+méthode soit vérifié si le résultat est supposé être bon, et/ou si le
+résultat est supposé être mauvais. Chaque méthode possède une fonction
+de type assert qui comparera pour nous le résultat obtenu et le
+résultat attendu.
+
+Après avoir écrit les méthodes tests, on peut activer JUnit en le
+lançant depuis la classe test, et donnera automatiquement si les
+attentes et les résultats correspondent pour chacune des méthodes à
+tester.
+
+Nous avons ainsi réussi à tester nos classes, et chaque méthode pour
+chaque classe marche fonctionne correctement selon les conditions que
+l’on s’est fixé.
+
 
 * Déroulement d'une partie
 
