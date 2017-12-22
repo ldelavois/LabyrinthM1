@@ -44,6 +44,7 @@ public class View {
 	private Image imageCandy1 = new Image("file:resources/candy-1.png");
 	ImageView candy1= new ImageView(imageCandy1);
 
+
 	/**
 	 * Constructeur de la vue. Crée la fenêtre et le plateau de jeu.
 	 * @param nbrX Taille en x.
@@ -155,9 +156,10 @@ public class View {
 	 * @param c La position de l'item
 	 */
 	public void placeItem(Item i) {
-		System.out.println("Pos :" +i.getVertexPos());
 		placeSprite (candy1, i.getVertexPos());
 	}
+	
+
 
 	private void placeSprite (ImageView i, Vertex v) {
 		i.setX((int) ((WALL + v.getX() * (WALL + CELL)) * SPAN));

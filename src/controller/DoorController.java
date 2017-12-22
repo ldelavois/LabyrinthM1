@@ -9,7 +9,7 @@ public class DoorController {
 
 	protected DoorController(View view) {
 		door = new Door(Controller.getLabyrinth(), true);
-		//sSystem.out.println(door.getVertexPos());
+		//System.out.println(door.getVertexPos());
 		view.placeDoor(door);
 	}
 	

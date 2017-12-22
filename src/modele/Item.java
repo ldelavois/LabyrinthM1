@@ -16,4 +16,5 @@ public class Item extends Entity  {
 	public int getValue () {
 		return value;
 	}
+	
 }
