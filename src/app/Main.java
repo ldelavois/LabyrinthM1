@@ -18,6 +18,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		controller.start(primaryStage);
 	    primaryStage.setTitle("Labyrinthe");
+	    System.out.println("A vous de jouer!");
 	}
 
 	@Override

@@ -44,27 +44,27 @@ public class PlayerController {
 		switch (event.getCode()) {
 
 		case UP:
-			System.out.println("\n" + event.getCode());
+			//System.out.println("\n" + event.getCode());
 			player.move(Controller.getLabyrinth(), Directions.NORTH);
-			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
+			//System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 
 		case DOWN:
-			System.out.println("\n" + event.getCode());
+			//System.out.println("\n" + event.getCode());
 			player.move(Controller.getLabyrinth(), Directions.SOUTH);
-			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
+			//System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 
 		case LEFT:
-			System.out.println("\n" + event.getCode());
+			//System.out.println("\n" + event.getCode());
 			player.move(Controller.getLabyrinth(), Directions.WEST);
-			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
+			//System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 
 		case RIGHT:
-			System.out.println("\n" + event.getCode());
+			//System.out.println("\n" + event.getCode());
 			player.move(Controller.getLabyrinth(), Directions.EAST);
-			System.out.println("position : " + player.getposX() + " ; " + player.getposY());
+			//System.out.println("position : " + player.getposX() + " ; " + player.getposY());
 			break;
 
 		default:

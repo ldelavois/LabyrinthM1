@@ -19,6 +19,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	private static PlayerController playerController;
 	private static EnnemyController ennemyController;
 	private static DoorController doorController;
+	private static ItemController itemController;
 
 	/**
 	 * 
@@ -29,6 +30,7 @@ public class Controller implements EventHandler<KeyEvent> {
 		playerController = new PlayerController(view);
 		ennemyController = new EnnemyController(view);
 		doorController = new DoorController(view);
+		itemController = new ItemController(view);
 		ennemyController.start();
 	}
 
@@ -76,20 +78,47 @@ public class Controller implements EventHandler<KeyEvent> {
 	protected DoorController getDoorController() {
 		return doorController;
 	}
+	
+	protected ItemController getItemController() {
+		return itemController;
+	}
+
 
 	protected void gameOver() {
 		if (playerController.getPlayer().collision(Controller.getInstance().getEnnemyController().getEnnemy())) {
-			System.out.println("PERDU");
-			System.out.println("Voulez-vous recommencer?");
-			System.out.println("Si oui, veuillez appuyer sur une touche.");
-					}
+			System.out.println("Vous avez perdu!");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.exit(0);
+		}
 	}
 
 	protected void victory() {
-		if(playerController.getPlayer().collision(/*changer avec la porte*/Controller.getInstance().getEnnemyController().getEnnemy())) {
-			System.out.println("GAGNE");
+		if(playerController.getPlayer().collision(Controller.getInstance().getDoorController().getDoor())) {
+			System.out.println("Vous avez gagné !");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.exit(0);
 		}
 	}
+	
+	protected void itemDrop() {
+		if (playerController.getPlayer().collision(Controller.getInstance().getItemController().getItem())) {
+			System.out.println("Vous avez récupéré un bonbon!");
+			System.out.println("test");
+			}
+		System.exit(0);
+	}
+
+
 	@Override
 	public void handle(KeyEvent event) {
 		getPlayerController().movePlayer(event);
